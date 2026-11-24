@@ -126,6 +126,137 @@
       background: transparent;
     }
 
+    /* Global Dark Options for Select Elements */
+    select, select option, select optgroup {
+      background-color: #11141a !important;
+      color: #ffffff !important;
+    }
+
+    /* Custom Luxury Dropdowns for Dark Theme */
+    .custom-select-wrap {
+      position: relative;
+      width: 100%;
+      user-select: none;
+    }
+
+    .custom-select-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      padding: 11px 14px;
+      background: #11141a;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-select-trigger:hover {
+      border-color: var(--accent);
+      background: #161b22;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.25);
+    }
+
+    .custom-select-wrap.open .custom-select-trigger {
+      border-color: #c084fc;
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+    }
+
+    .custom-select-trigger .trigger-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .custom-select-trigger .trigger-arrow {
+      font-size: 10px;
+      color: var(--text-muted);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .custom-select-wrap.open .trigger-arrow {
+      transform: rotate(180deg);
+      color: #c084fc;
+    }
+
+    .custom-select-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      background: #11141a;
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 16px rgba(168, 85, 247, 0.25);
+      z-index: 1000;
+      max-height: 260px;
+      overflow-y: auto;
+      padding: 6px;
+      backdrop-filter: blur(12px);
+    }
+
+    .custom-select-wrap.open .custom-select-menu {
+      display: block;
+      animation: menuFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes menuFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .custom-select-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #e2e8f0;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .custom-select-option:hover {
+      background: rgba(168, 85, 247, 0.18);
+      color: #fff;
+    }
+
+    .custom-select-option.selected {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.2));
+      color: #fff;
+      font-weight: 600;
+      border: 1px solid rgba(168, 85, 247, 0.35);
+    }
+
+    .custom-select-option .opt-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .custom-select-option .opt-check {
+      font-size: 12px;
+      color: #4ade80;
+      opacity: 0;
+    }
+
+    .custom-select-option.selected .opt-check {
+      opacity: 1;
+    }
+
     /* Custom Range Sliders (Повзунки) */
     input[type="range"] {
       -webkit-appearance: none;
@@ -2161,34 +2292,97 @@
 
             <div class="form-row">
               <label class="form-lbl">1. Оберіть майстра</label>
-              <select class="input-field" id="storiesMasterSelect" onchange="drawAdminStories()">
-                <option value="all">👑 Всі майстри студії Aura</option>
-                <option value="m-daria">Дар'я (ТОП-Майстер Манікюру)</option>
-                <option value="m-alina">Аліна (ТОП-Майстер Smart-Педикюру)</option>
-                <option value="m-valeria">Валерія (Майстер Манікюру & 4 руки)</option>
-              </select>
+              <input type="hidden" id="storiesMasterSelect" value="all">
+              <div class="custom-select-wrap" id="customStoriesMasterWrap">
+                <div class="custom-select-trigger" onclick="toggleCustomDropdown('customStoriesMasterWrap')">
+                  <div class="trigger-content" id="storiesMasterTriggerText">👑 Всі майстри студії Aura</div>
+                  <div class="trigger-arrow">▼</div>
+                </div>
+                <div class="custom-select-menu">
+                  <div class="custom-select-option selected" data-value="all" onclick="selectCustomOption('storiesMasterSelect', 'customStoriesMasterWrap', 'all', '👑 Всі майстри студії Aura')">
+                    <div class="opt-left"><span>👑</span> <span>Всі майстри студії Aura</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="m-daria" onclick="selectCustomOption('storiesMasterSelect', 'customStoriesMasterWrap', 'm-daria', '💅 Дар\'я (ТОП-Майстер Манікюру)')">
+                    <div class="opt-left"><span>💅</span> <span>Дар'я (ТОП-Майстер Манікюру)</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="m-alina" onclick="selectCustomOption('storiesMasterSelect', 'customStoriesMasterWrap', 'm-alina', '🦶 Аліна (ТОП-Майстер Smart-Педикюру)')">
+                    <div class="opt-left"><span>🦶</span> <span>Аліна (ТОП-Майстер Smart-Педикюру)</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="m-valeria" onclick="selectCustomOption('storiesMasterSelect', 'customStoriesMasterWrap', 'm-valeria', '✨ Валерія (Майстер Манікюру & 4 руки)')">
+                    <div class="opt-left"><span>✨</span> <span>Валерія (Майстер Манікюру & 4 руки)</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="form-row">
               <label class="form-lbl">2. Напрямок послуги</label>
-              <select class="input-field" id="storiesDirSelect" onchange="drawAdminStories()">
-                <option value="Манікюр">💅 Манікюр</option>
-                <option value="Smart-Педикюр">🦶 Smart-Педикюр</option>
-                <option value="Комплекс у 4 руки">⚡ Комплекс у 4 руки</option>
-                <option value="Манікюр & Педикюр">💅🦶 Манікюр & Педикюр</option>
-                <option value="Укріплення & Нарощування">💎 Укріплення & Нарощування</option>
-              </select>
+              <input type="hidden" id="storiesDirSelect" value="Манікюр">
+              <div class="custom-select-wrap" id="customStoriesDirWrap">
+                <div class="custom-select-trigger" onclick="toggleCustomDropdown('customStoriesDirWrap')">
+                  <div class="trigger-content" id="storiesDirTriggerText">💅 Манікюр</div>
+                  <div class="trigger-arrow">▼</div>
+                </div>
+                <div class="custom-select-menu">
+                  <div class="custom-select-option selected" data-value="Манікюр" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Манікюр', '💅 Манікюр')">
+                    <div class="opt-left"><span>💅</span> <span>Манікюр</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="Smart-Педикюр" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Smart-Педикюр', '🦶 Smart-Педикюр')">
+                    <div class="opt-left"><span>🦶</span> <span>Smart-Педикюр</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="Комплекс у 4 руки" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Комплекс у 4 руки', '⚡ Комплекс у 4 руки')">
+                    <div class="opt-left"><span>⚡</span> <span>Комплекс у 4 руки</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="Манікюр & Педикюр" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Манікюр & Педикюр', '💅🦶 Манікюр & Педикюр')">
+                    <div class="opt-left"><span>💅🦶</span> <span>Манікюр & Педикюр</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="Укріплення & Нарощування" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Укріплення & Нарощування', '💎 Укріплення & Нарощування')">
+                    <div class="opt-left"><span>💎</span> <span>Укріплення & Нарощування</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="form-row">
               <label class="form-lbl">3. Дата віконець</label>
-              <select class="input-field" id="storiesDateSelect" onchange="drawAdminStories()">
-                <option value="Сьогодні • 24 листопада">Сьогодні • 24 листопада</option>
-                <option value="Завтра • 25 листопада" selected>Завтра • 25 листопада</option>
-                <option value="Четвер • 26 листопада">Четвер • 26 листопада</option>
-                <option value="П'ятниця • 27 листопада">П'ятниця • 27 листопада</option>
-                <option value="Субота • 28 листопада">Субота • 28 листопада</option>
-              </select>
+              <input type="hidden" id="storiesDateSelect" value="Завтра • 25 листопада">
+              <div class="custom-select-wrap" id="customStoriesDateWrap">
+                <div class="custom-select-trigger" onclick="toggleCustomDropdown('customStoriesDateWrap')">
+                  <div class="trigger-content" id="storiesDateTriggerText">📅 Завтра • 25 листопада</div>
+                  <div class="trigger-arrow">▼</div>
+                </div>
+                <div class="custom-select-menu">
+                  <div class="custom-select-option" data-value="Сьогодні • 24 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'Сьогодні • 24 листопада', '📅 Сьогодні • 24 листопада')">
+                    <div class="opt-left"><span>📅</span> <span>Сьогодні • 24 листопада</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option selected" data-value="Завтра • 25 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'Завтра • 25 листопада', '📅 Завтра • 25 листопада')">
+                    <div class="opt-left"><span>📅</span> <span>Завтра • 25 листопада</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="Четвер • 26 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'Четвер • 26 листопада', '📅 Четвер • 26 листопада')">
+                    <div class="opt-left"><span>📅</span> <span>Четвер • 26 листопада</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="П'ятниця • 27 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'П\'ятниця • 27 листопада', '📅 П\'ятниця • 27 листопада')">
+                    <div class="opt-left"><span>📅</span> <span>П'ятниця • 27 листопада</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                  <div class="custom-select-option" data-value="Субота • 28 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'Субота • 28 листопада', '📅 Субота • 28 листопада')">
+                    <div class="opt-left"><span>📅</span> <span>Субота • 28 листопада</span></div>
+                    <span class="opt-check">✓</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="form-row">
@@ -4597,12 +4791,53 @@
     }
     window.toggleStoriesHour = toggleStoriesHour;
 
+    // Custom Dropdown Helper Functions
+    function toggleCustomDropdown(wrapId) {
+      const wrap = document.getElementById(wrapId);
+      if (!wrap) return;
+      const isOpen = wrap.classList.contains('open');
+      // Close all others first
+      document.querySelectorAll('.custom-select-wrap').forEach(w => w.classList.remove('open'));
+      if (!isOpen) {
+        wrap.classList.add('open');
+      }
+    }
+    window.toggleCustomDropdown = toggleCustomDropdown;
+
+    function selectCustomOption(hiddenInputId, wrapId, val, label) {
+      const hiddenInp = document.getElementById(hiddenInputId);
+      if (hiddenInp) hiddenInp.value = val;
+
+      const wrap = document.getElementById(wrapId);
+      if (wrap) {
+        const trigger = wrap.querySelector('.trigger-content');
+        if (trigger) trigger.innerText = label;
+        wrap.querySelectorAll('.custom-select-option').forEach(opt => {
+          if (opt.getAttribute('data-value') === val) {
+            opt.classList.add('selected');
+          } else {
+            opt.classList.remove('selected');
+          }
+        });
+        wrap.classList.remove('open');
+      }
+      drawAdminStories();
+    }
+    window.selectCustomOption = selectCustomOption;
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.custom-select-wrap')) {
+        document.querySelectorAll('.custom-select-wrap').forEach(w => w.classList.remove('open'));
+      }
+    });
+
     function drawAdminStories() {
       const canvas = document.getElementById('adminStoriesCanvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
 
-      // Master selection (from dropdown or active account)
+      // Master selection
       const mSelect = document.getElementById('storiesMasterSelect');
       let chosenMasterId = mSelect ? mSelect.value : 'all';
       if (chosenMasterId === 'all' && appState.activeMasterId && appState.activeMasterId !== 'all') {
@@ -4632,21 +4867,22 @@
         dlBtn.innerText = `📥 Завантажити Stories (${activeMaster ? activeMaster.name : 'Aura Studio'})`;
       }
 
-      // Background
+      // 1. Clear & Background
       ctx.fillStyle = '#090b0e';
       ctx.fillRect(0, 0, 1080, 1920);
 
-      // Soft Luxury Purple & Gold radial ambient glow
+      // 2. Soft Luxury Purple & Gold radial ambient glow
       const grad = ctx.createRadialGradient(540, 340, 60, 540, 340, 850);
-      grad.addColorStop(0, 'rgba(168, 85, 247, 0.22)');
+      grad.addColorStop(0, 'rgba(168, 85, 247, 0.24)');
       grad.addColorStop(0.5, 'rgba(147, 86, 212, 0.08)');
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 1080, 950);
 
-      // Studio Header Badge
+      // 3. Studio Header Badge (MUST call beginPath!)
+      ctx.beginPath();
       ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-      ctx.strokeStyle = 'rgba(168, 85, 247, 0.35)';
+      ctx.strokeStyle = 'rgba(168, 85, 247, 0.4)';
       ctx.lineWidth = 1.5;
       ctx.roundRect(540 - 290, 240, 580, 68, 34);
       ctx.fill();
@@ -4655,19 +4891,23 @@
       ctx.fillStyle = '#c084fc';
       ctx.font = '700 24px Inter, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('AURA NAIL & PEDI STUDIO • КИЇВ', 540, 282);
+      ctx.textBaseline = 'middle';
+      ctx.fillText('AURA NAIL & PEDI STUDIO • КИЇВ', 540, 274);
 
-      // Main Title
+      // 4. Main Title
       ctx.fillStyle = '#ffffff';
       ctx.font = '800 72px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'alphabetic';
       ctx.fillText('Вільні віконця', 540, 400);
 
-      // Direction & Date Header Banner
+      // 5. Direction & Date Header Banner
       ctx.fillStyle = '#f3e8ff';
       ctx.font = '600 38px Inter, sans-serif';
+      ctx.textAlign = 'center';
       ctx.fillText(`${dir} • ${chosenDateStr}`, 540, 465);
 
-      // Master subtitle
+      // 6. Master subtitle
       if (activeMaster) {
         ctx.fillStyle = '#9da6b3';
         ctx.font = '500 28px Inter, sans-serif';
@@ -4678,17 +4918,18 @@
         ctx.fillText("Майстри студії: Дар'я, Аліна, Валерія", 540, 515);
       }
 
-      // Render Time Slots (Supports 1 to 7 slots dynamically)
+      // 7. Render Time Slots (Supports 1 to 7 slots dynamically)
       const maxSlots = Math.min(slots.length, 7);
       const cardHeight = (maxSlots <= 4) ? 135 : (maxSlots <= 5) ? 120 : 105;
       const cardGap = (maxSlots <= 4) ? 35 : (maxSlots <= 5) ? 25 : 18;
-      const startY = 600;
+      const startY = 590;
 
       for (let idx = 0; idx < maxSlots; idx++) {
         const slot = slots[idx];
         const y = startY + idx * (cardHeight + cardGap);
 
-        // Card background
+        // A. Card background - ISOLATED PATH!
+        ctx.beginPath();
         ctx.fillStyle = '#11141a';
         ctx.strokeStyle = 'rgba(168, 85, 247, 0.35)';
         ctx.lineWidth = 2;
@@ -4696,29 +4937,36 @@
         ctx.fill();
         ctx.stroke();
 
-        // Time slot clock icon & text
-        ctx.fillStyle = '#ffffff';
-        ctx.font = '700 48px Inter, sans-serif';
-        ctx.textAlign = 'left';
-        ctx.fillText(`⏰  ${slot}`, 180, y + cardHeight / 2 + 16);
-
-        // Status badge pill
+        // B. Status badge pill - ISOLATED PATH!
+        ctx.beginPath();
+        const pillWidth = 260;
+        const pillHeight = 44;
+        const pillX = 890 - pillWidth;
+        const pillY = y + (cardHeight - pillHeight) / 2;
         ctx.fillStyle = 'rgba(46, 196, 124, 0.15)';
         ctx.strokeStyle = 'rgba(46, 196, 124, 0.4)';
         ctx.lineWidth = 1.5;
-        const pillWidth = 260;
-        const pillHeight = 44;
-        ctx.roundRect(890 - pillWidth, y + (cardHeight - pillHeight) / 2, pillWidth, pillHeight, 22);
+        ctx.roundRect(pillX, pillY, pillWidth, pillHeight, 22);
         ctx.fill();
         ctx.stroke();
 
+        // C. Time slot clock icon & text
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '700 48px Inter, sans-serif';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(`⏰  ${slot}`, 180, y + cardHeight / 2);
+
+        // D. Status text
         ctx.fillStyle = '#4ade80';
         ctx.font = '600 22px Inter, sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText('✓ Вільно для запису', 890 - pillWidth / 2, y + (cardHeight - pillHeight) / 2 + 29);
+        ctx.textBaseline = 'middle';
+        ctx.fillText('✓ Вільно для запису', pillX + pillWidth / 2, pillY + pillHeight / 2);
       }
 
-      // Bottom Location & Instagram CTA Box
+      // 8. Bottom Location & Instagram CTA Box - ISOLATED PATH!
+      ctx.beginPath();
       ctx.fillStyle = '#11141a';
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
       ctx.lineWidth = 1.5;
@@ -4729,6 +4977,7 @@
       ctx.fillStyle = '#c084fc';
       ctx.font = '700 32px Inter, sans-serif';
       ctx.textAlign = 'center';
+      ctx.textBaseline = 'alphabetic';
       ctx.fillText('Запис в 1 клік через шапку профілю 🔗', 540, 1530);
 
       ctx.fillStyle = '#ffffff';
