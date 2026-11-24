@@ -1979,26 +1979,64 @@
             <canvas id="adminStoriesCanvas" width="1080" height="1920" style="width: 100%; height: 100%; object-fit: contain;"></canvas>
           </div>
           <div class="data-card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
-            <h3 style="font-size: 16px;">Генератор Stories «Вільні віконця»</h3>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.4;">
-              Створюйте фірмові картинки 1080x1920 для Instagram Stories студії @aura.nail.pedi.kiev з адресою Французький б-р, 26/1 в 1 клік!
+            <h3 style="font-size: 16px; color: #fff; margin: 0;">📱 Генератор Stories «Вільні віконця»</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.4; margin: 0;">
+              Створюйте готові Stories 1080x1920 для Instagram @aura.nail.pedi.kiev. Назва студії, майстер, дата та час формуються автоматично!
             </p>
+
             <div class="form-row">
-              <label class="form-lbl">Напрямок послуги</label>
-              <select class="input-field" id="storiesDirSelect">
-                <option value="Манікюр">💅 Манікюр</option>
-                <option value="Педикюр">🦶 Педикюр</option>
-                
-                
-                
-                
+              <label class="form-lbl">1. Оберіть майстра</label>
+              <select class="input-field" id="storiesMasterSelect" onchange="drawAdminStories()">
+                <option value="all">👑 Всі майстри студії Aura</option>
+                <option value="m-daria">Дар'я (ТОП-Майстер Манікюру)</option>
+                <option value="m-alina">Аліна (ТОП-Майстер Smart-Педикюру)</option>
+                <option value="m-valeria">Валерія (Майстер Манікюру & 4 руки)</option>
               </select>
             </div>
+
             <div class="form-row">
-              <label class="form-lbl">Вільні години (через крапку •)</label>
-              <input type="text" class="input-field" id="storiesHoursInput" value="11:30 • 14:00 • 17:30">
+              <label class="form-lbl">2. Напрямок послуги</label>
+              <select class="input-field" id="storiesDirSelect" onchange="drawAdminStories()">
+                <option value="Манікюр">💅 Манікюр</option>
+                <option value="Smart-Педикюр">🦶 Smart-Педикюр</option>
+                <option value="Комплекс у 4 руки">⚡ Комплекс у 4 руки</option>
+                <option value="Манікюр & Педикюр">💅🦶 Манікюр & Педикюр</option>
+                <option value="Укріплення & Нарощування">💎 Укріплення & Нарощування</option>
+              </select>
             </div>
-            <button class="btn btn-primary" id="btnDownloadStory" style="align-self: flex-start;">
+
+            <div class="form-row">
+              <label class="form-lbl">3. Дата віконець</label>
+              <select class="input-field" id="storiesDateSelect" onchange="drawAdminStories()">
+                <option value="Сьогодні • 24 листопада">Сьогодні • 24 листопада</option>
+                <option value="Завтра • 25 листопада" selected>Завтра • 25 листопада</option>
+                <option value="Четвер • 26 листопада">Четвер • 26 листопада</option>
+                <option value="П'ятниця • 27 листопада">П'ятниця • 27 листопада</option>
+                <option value="Субота • 28 листопада">Субота • 28 листопада</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <label class="form-lbl" style="margin: 0;">4. Вільні години (через кому або пробіл)</label>
+              </div>
+              <input type="text" class="input-field" id="storiesHoursInput" value="10:00, 12:30, 15:00, 17:30, 19:00" oninput="drawAdminStories()">
+              
+              <!-- Quick Time Chips -->
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 8px; margin-bottom: 4px;">Швидке додавання/видалення віконець:</div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="storiesQuickTimeChips">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('09:30')">+ 09:30</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('11:00')">+ 11:00</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('12:30')">+ 12:30</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('14:00')">+ 14:00</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('15:30')">+ 15:30</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('17:00')">+ 17:00</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('18:30')">+ 18:30</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('20:00')">+ 20:00</button>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" id="btnDownloadStory" style="align-self: flex-start; margin-top: 6px;">
               📥 Завантажити Stories (PNG 1080x1920)
             </button>
           </div>
@@ -4335,122 +4373,175 @@
     }
     window.renderAdminFinance = renderAdminFinance;
 
+    function toggleStoriesHour(h) {
+      const inp = document.getElementById('storiesHoursInput');
+      if (!inp) return;
+      let raw = inp.value || '';
+      // Parse current list
+      let list = raw.split(/[,;•\s|/]+/).map(s => s.trim()).filter(Boolean);
+      const idx = list.indexOf(h);
+      if (idx !== -1) {
+        list.splice(idx, 1);
+      } else {
+        list.push(h);
+        list.sort();
+      }
+      inp.value = list.join(', ');
+      drawAdminStories();
+    }
+    window.toggleStoriesHour = toggleStoriesHour;
+
     function drawAdminStories() {
       const canvas = document.getElementById('adminStoriesCanvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
-      const activeId = appState.activeMasterId || 'all';
-      const activeMaster = (activeId !== 'all') ? REAL_MASTERS.find(m => m.id === activeId) : null;
+
+      // Master selection (from dropdown or active account)
+      const mSelect = document.getElementById('storiesMasterSelect');
+      let chosenMasterId = mSelect ? mSelect.value : 'all';
+      if (chosenMasterId === 'all' && appState.activeMasterId && appState.activeMasterId !== 'all') {
+        chosenMasterId = appState.activeMasterId;
+        if (mSelect) mSelect.value = chosenMasterId;
+      }
+      const activeMaster = (chosenMasterId !== 'all') ? REAL_MASTERS.find(m => m.id === chosenMasterId) : null;
 
       const dirSelect = document.getElementById('storiesDirSelect');
-      if (activeMaster && dirSelect) {
-        const primaryDir = (activeMaster.id === 'm-daria') ? 'Манікюр'
-                         : (activeMaster.id === 'm-alina') ? 'Педикюр'
-                         : (activeMaster.id === 'm-alina') ? 'Педикюр' : 'Манікюр';
-        dirSelect.value = primaryDir;
-      }
       const dir = dirSelect ? dirSelect.value : 'Манікюр';
+
+      const dateSelect = document.getElementById('storiesDateSelect');
+      const chosenDateStr = dateSelect ? dateSelect.value : 'Завтра • 25 листопада';
+
       const hoursInput = document.getElementById('storiesHoursInput');
-      const hours = (hoursInput ? hoursInput.value : '11:30 • 14:00 • 17:30').trim() || '11:30 • 14:00 • 17:30';
+      const rawHours = (hoursInput ? hoursInput.value : '').trim() || '10:00, 12:30, 15:00, 17:30, 19:00';
+
+      // Parse hours using flexible separator (comma, bullet, semicolon, space, newline, pipe)
+      let slots = rawHours.split(/[,;•\s\n\r|/]+/).map(s => s.trim()).filter(s => s.length >= 4);
+      if (slots.length === 0) {
+        slots = ['10:00', '12:30', '15:00', '17:30'];
+      }
 
       // Update download button text
       const dlBtn = document.getElementById('btnDownloadStory');
       if (dlBtn) {
-        dlBtn.innerText = `📥 Завантажити Stories (${activeMaster ? activeMaster.name : 'Студія'})`;
+        dlBtn.innerText = `📥 Завантажити Stories (${activeMaster ? activeMaster.name : 'Aura Studio'})`;
       }
 
+      // Background
       ctx.fillStyle = '#090b0e';
       ctx.fillRect(0, 0, 1080, 1920);
 
-      // Subtle Purple radial glow
-      const grad = ctx.createRadialGradient(540, 300, 50, 540, 300, 800);
-      grad.addColorStop(0, 'rgba(147, 86, 212, 0.18)');
+      // Soft Luxury Purple & Gold radial ambient glow
+      const grad = ctx.createRadialGradient(540, 340, 60, 540, 340, 850);
+      grad.addColorStop(0, 'rgba(168, 85, 247, 0.22)');
+      grad.addColorStop(0.5, 'rgba(147, 86, 212, 0.08)');
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
       ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, 1080, 900);
+      ctx.fillRect(0, 0, 1080, 950);
 
-      // Studio Header
+      // Studio Header Badge
       ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-      ctx.roundRect(540 - 260, 260, 520, 64, 32);
+      ctx.strokeStyle = 'rgba(168, 85, 247, 0.35)';
+      ctx.lineWidth = 1.5;
+      ctx.roundRect(540 - 290, 240, 580, 68, 34);
       ctx.fill();
+      ctx.stroke();
 
-      ctx.fillStyle = '#9356d4';
-      ctx.font = '600 24px Inter, sans-serif';
+      ctx.fillStyle = '#c084fc';
+      ctx.font = '700 24px Inter, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('WILD BEAUTY SPACE • ОДЕСА', 540, 300);
+      ctx.fillText('AURA NAIL & PEDI STUDIO • КИЇВ', 540, 282);
 
-      // Title
+      // Main Title
       ctx.fillStyle = '#ffffff';
-      ctx.font = '700 70px Inter, sans-serif';
-      ctx.fillText('Вільні віконця', 540, 420);
+      ctx.font = '800 72px Inter, sans-serif';
+      ctx.fillText('Вільні віконця', 540, 400);
 
-      // Master badge on canvas
+      // Direction & Date Header Banner
+      ctx.fillStyle = '#f3e8ff';
+      ctx.font = '600 38px Inter, sans-serif';
+      ctx.fillText(`${dir} • ${chosenDateStr}`, 540, 465);
+
+      // Master subtitle
       if (activeMaster) {
-        ctx.fillStyle = '#c084fc';
-        ctx.font = '600 36px Inter, sans-serif';
-        ctx.fillText(`Майстер: ${activeMaster.name} • ${activeMaster.role}`, 540, 475);
-
         ctx.fillStyle = '#9da6b3';
-        ctx.font = '400 30px Inter, sans-serif';
-        ctx.fillText(`${dir} • Запис на найближчі дні`, 540, 525);
+        ctx.font = '500 28px Inter, sans-serif';
+        ctx.fillText(`Майстер: ${activeMaster.name} (${activeMaster.role})`, 540, 515);
       } else {
         ctx.fillStyle = '#9da6b3';
-        ctx.font = '400 34px Inter, sans-serif';
-        ctx.fillText(`${dir} • Завтра (25 листопада)`, 540, 490);
+        ctx.font = '400 28px Inter, sans-serif';
+        ctx.fillText("Майстри студії: Дар'я, Аліна, Валерія", 540, 515);
       }
 
-      // Slots
-      const slots = hours.split('•').map(s => s.trim());
-      const startY = activeMaster ? 660 : 640;
-      slots.forEach((slot, idx) => {
-        const y = startY + idx * 165;
+      // Render Time Slots (Supports 1 to 7 slots dynamically)
+      const maxSlots = Math.min(slots.length, 7);
+      const cardHeight = (maxSlots <= 4) ? 135 : (maxSlots <= 5) ? 120 : 105;
+      const cardGap = (maxSlots <= 4) ? 35 : (maxSlots <= 5) ? 25 : 18;
+      const startY = 600;
+
+      for (let idx = 0; idx < maxSlots; idx++) {
+        const slot = slots[idx];
+        const y = startY + idx * (cardHeight + cardGap);
+
+        // Card background
         ctx.fillStyle = '#11141a';
-        ctx.strokeStyle = 'rgba(147, 86, 212, 0.3)';
+        ctx.strokeStyle = 'rgba(168, 85, 247, 0.35)';
         ctx.lineWidth = 2;
-        ctx.roundRect(140, y, 800, 125, 24);
+        ctx.roundRect(140, y, 800, cardHeight, 24);
         ctx.fill();
         ctx.stroke();
 
+        // Time slot clock icon & text
         ctx.fillStyle = '#ffffff';
-        ctx.font = '600 50px Inter, sans-serif';
+        ctx.font = '700 48px Inter, sans-serif';
         ctx.textAlign = 'left';
-        ctx.fillText(slot, 190, y + 80);
+        ctx.fillText(`⏰  ${slot}`, 180, y + cardHeight / 2 + 16);
 
-        ctx.fillStyle = '#2ec47c';
-        ctx.font = '500 26px Inter, sans-serif';
-        ctx.textAlign = 'right';
-        ctx.fillText('Доступно для запису', 890, y + 76);
-      });
+        // Status badge pill
+        ctx.fillStyle = 'rgba(46, 196, 124, 0.15)';
+        ctx.strokeStyle = 'rgba(46, 196, 124, 0.4)';
+        ctx.lineWidth = 1.5;
+        const pillWidth = 260;
+        const pillHeight = 44;
+        ctx.roundRect(890 - pillWidth, y + (cardHeight - pillHeight) / 2, pillWidth, pillHeight, 22);
+        ctx.fill();
+        ctx.stroke();
 
-      // Bottom Location & CTA
+        ctx.fillStyle = '#4ade80';
+        ctx.font = '600 22px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('✓ Вільно для запису', 890 - pillWidth / 2, y + (cardHeight - pillHeight) / 2 + 29);
+      }
+
+      // Bottom Location & Instagram CTA Box
       ctx.fillStyle = '#11141a';
-      ctx.roundRect(140, 1460, 800, 220, 28);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+      ctx.lineWidth = 1.5;
+      ctx.roundRect(140, 1460, 800, 230, 28);
       ctx.fill();
+      ctx.stroke();
 
-      ctx.fillStyle = '#9356d4';
-      ctx.font = '600 32px Inter, sans-serif';
+      ctx.fillStyle = '#c084fc';
+      ctx.font = '700 32px Inter, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('Запис в 1 клік через шапку профілю', 540, 1540);
+      ctx.fillText('Запис в 1 клік через шапку профілю 🔗', 540, 1530);
 
-      ctx.fillStyle = '#f2f4f7';
-      ctx.font = '400 26px Inter, sans-serif';
-      ctx.fillText('📍 Київ, бульвар Французький, 26/1', 540, 1590);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '500 26px Inter, sans-serif';
+      ctx.fillText('📍 м. Київ, вул. Велика Васильківська, 28', 540, 1585);
+
       ctx.fillStyle = '#9da6b3';
       ctx.font = '400 24px Inter, sans-serif';
-      ctx.fillText('📞 +38 075 645 77 35', 540, 1630);
+      ctx.fillText('📞 +38 075 645 77 35 • Instagram: @aura.nail.pedi.kiev', 540, 1635);
     }
     window.drawAdminStories = drawAdminStories;
 
     document.getElementById('btnDownloadStory').addEventListener('click', () => {
       const canvas = document.getElementById('adminStoriesCanvas');
       const link = document.createElement('a');
-      link.download = 'wild_beauty_stories_odessa.png';
+      link.download = 'aura_nail_stories_vikonca.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
     });
-
-    document.getElementById('storiesDirSelect').addEventListener('change', drawAdminStories);
-    document.getElementById('storiesHoursInput').addEventListener('input', drawAdminStories);
 
     // Initial Render & Hash Routing
     renderClientServices();
