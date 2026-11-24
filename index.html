@@ -85,6 +85,83 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* =========================================================================
+       LUXURY DARK CUSTOM SCROLLBARS (ПО ВСЬОМУ САЙТУ ТА В АДМІНЦІ)
+       ========================================================================= */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(168, 85, 247, 0.45) rgba(255, 255, 255, 0.03);
+    }
+
+    *::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    *::-webkit-scrollbar-track {
+      background: rgba(13, 17, 23, 0.6);
+      border-radius: 9999px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(236, 72, 153, 0.45));
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.2s ease;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.8), rgba(236, 72, 153, 0.8));
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+    }
+
+    *::-webkit-scrollbar-button {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    *::-webkit-scrollbar-corner {
+      background: transparent;
+    }
+
+    /* Custom Range Sliders (Повзунки) */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      outline: none;
+      transition: background 0.2s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 14px rgba(168, 85, 247, 0.9);
+    }
+    input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+    }
     
     body {
       font-family: var(--font-sans);
@@ -619,73 +696,171 @@
 
     /* Master Accounts & Profile Switcher */
     .master-account-bar {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, rgba(22, 27, 34, 0.85) 0%, rgba(13, 17, 23, 0.95) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      border-radius: 16px;
       padding: 16px 20px;
       margin-bottom: 20px;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .master-account-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.6), rgba(236, 72, 153, 0.5), transparent);
     }
 
     .master-filter-strip {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       overflow-x: auto;
-      padding-bottom: 6px;
+      padding: 6px 2px 10px 2px;
       scrollbar-width: thin;
+      scrollbar-color: rgba(168, 85, 247, 0.55) rgba(255, 255, 255, 0.04);
       -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+
+    .master-filter-strip::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .master-filter-strip::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      margin: 0 10px;
+    }
+
+    .master-filter-strip::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #a855f7, #ec4899);
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+    }
+
+    .master-filter-strip::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(90deg, #c084fc, #f472b6);
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
+    }
+
+    .master-filter-strip::-webkit-scrollbar-button {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
     }
 
     .master-filter-chip {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--bg-surface-raised);
-      border: 1px solid var(--border-subtle);
-      padding: 8px 16px;
-      border-radius: var(--radius-full);
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 8px 16px 8px 10px;
+      border-radius: 14px;
       cursor: pointer;
       white-space: nowrap;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      transition: all 0.2s ease;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       user-select: none;
+      position: relative;
+      flex-shrink: 0;
     }
 
     .master-filter-chip:hover {
-      border-color: var(--accent);
-      color: #fff;
-      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(168, 85, 247, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     }
 
     .master-filter-chip.active {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.2));
-      border-color: var(--accent);
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(168, 85, 247, 0.25);
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(236, 72, 153, 0.16));
+      border: 1.5px solid #c084fc;
+      box-shadow: 0 4px 20px rgba(168, 85, 247, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .master-chip-avatar-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .master-chip-avatar {
-      width: 26px;
-      height: 26px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      transition: border-color 0.2s ease;
+    }
+
+    .master-filter-chip.active .master-chip-avatar {
+      border-color: #c084fc;
+      box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+    }
+
+    .master-chip-status-dot {
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2ec47c;
+      border: 2px solid #0d1117;
+    }
+
+    .master-chip-info {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .master-chip-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      line-height: 1.25;
+    }
+
+    .master-chip-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+
+    .master-filter-chip.active .master-chip-sub {
+      color: #e9d5ff;
     }
 
     .master-chip-count {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1px 7px;
-      border-radius: 10px;
-      font-size: 11px;
-      font-weight: 700;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-size: 11.5px;
+      font-weight: 800;
       color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.2s ease;
+      min-width: 24px;
+      text-align: center;
     }
 
     .master-filter-chip.active .master-chip-count {
-      background: var(--accent);
+      background: linear-gradient(135deg, #a855f7, #ec4899);
       color: #fff;
+      border-color: transparent;
+      box-shadow: 0 2px 8px rgba(168, 85, 247, 0.4);
     }
 
     /* Data Cards & Tables */
@@ -3298,6 +3473,23 @@
       renderMasterFilterStrip();
     }
     window.renderAdminAppointments = renderAdminAppointments;
+    // Enable smooth mousewheel horizontal scrolling on strips (no ugly native bar needed)
+    function setupHorizontalWheelScroll() {
+      ['masterFilterStrip', 'bookingDatesScrollStrip'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && !el._hasWheelListener) {
+          el._hasWheelListener = true;
+          el.addEventListener('wheel', (evt) => {
+            if (evt.deltaY !== 0) {
+              evt.preventDefault();
+              el.scrollLeft += evt.deltaY;
+            }
+          }, { passive: false });
+        }
+      });
+    }
+    window.addEventListener('DOMContentLoaded', setupHorizontalWheelScroll);
+
 
     // Render Master Filter Strip and Active Profile State
     function renderMasterFilterStrip() {
@@ -3323,8 +3515,14 @@
       const isAllActive = (activeId === 'all');
       html += `
         <div class="master-filter-chip ${isAllActive ? 'active' : ''}" onclick="setActiveMasterAccount('all')" title="Переглянути всі записи студії">
-          <img src="./assets/img/logo.png" class="master-chip-avatar" alt="Всі майстри" onerror="this.src='./assets/img/logo.png'">
-          <span>👑 Всі майстри (Власниця)</span>
+          <div class="master-chip-avatar-wrap">
+            <img src="./assets/img/logo.png" class="master-chip-avatar" alt="Всі майстри" onerror="this.src='./assets/img/logo.png'">
+            <div class="master-chip-status-dot"></div>
+          </div>
+          <div class="master-chip-info">
+            <div class="master-chip-title">👑 Всі майстри</div>
+            <div class="master-chip-sub">Власниця • Журнал студії</div>
+          </div>
           <span class="master-chip-count">${counts.all || 0}</span>
         </div>
       `;
@@ -3333,15 +3531,23 @@
       REAL_MASTERS.forEach(m => {
         if (m.id === 'm-any') return;
         const isActive = (activeId === m.id);
-        const icon = (m.role.includes('нігтьов') || m.role.includes('манікюр')) ? '💅'
-                   : (m.role.includes('Лешмейкер') || m.role.includes('Ламі')) ? '👁️'
-                   
+        const icon = (m.id === 'm-daria') ? '💅'
+                   : (m.id === 'm-alina') ? '🦶'
                    : '✨';
+        const shortRole = (m.id === 'm-daria') ? 'ТОП-Манікюр'
+                        : (m.id === 'm-alina') ? 'Smart-Педикюр'
+                        : 'Манікюр & 4 руки';
 
         html += `
           <div class="master-filter-chip ${isActive ? 'active' : ''}" onclick="setActiveMasterAccount('${m.id}')" title="Кабінет: ${m.name} (${m.role})">
-            <img src="${m.avatar}" class="master-chip-avatar" alt="${m.name}" onerror="this.src='./assets/img/logo.png'">
-            <span>${icon} ${m.name}</span>
+            <div class="master-chip-avatar-wrap">
+              <img src="${m.avatar}" class="master-chip-avatar" alt="${m.name}" onerror="this.src='./assets/img/logo.png'">
+              <div class="master-chip-status-dot"></div>
+            </div>
+            <div class="master-chip-info">
+              <div class="master-chip-title">${icon} ${m.name}</div>
+              <div class="master-chip-sub">${shortRole}</div>
+            </div>
             <span class="master-chip-count">${counts[m.id] || 0}</span>
           </div>
         `;
