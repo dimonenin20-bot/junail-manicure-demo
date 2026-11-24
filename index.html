@@ -6,45 +6,51 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aura Nail & Pedi Studio ▷ Онлайн-запис & Nail CRM | Київ</title>
+  <meta name="description" content="Aura Nail & Pedi Studio — онлайн-запис 24/7, Telegram-сповіщення та студійна CRM для майстрів манікюру і Smart-педикюру в Києві.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236d28d9'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='17' fill='%23f8fafc'%3EA%3C/text%3E%3C/svg%3E">
+  <title>Aura Nail & Pedi Studio — Онлайн-запис та CRM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@350;400;450;500;550;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      
-      /* Dark Theme (Default) - Obsidian Slate & High-End Salon Violet */
-      --bg-base: #090b0e;
-      --bg-surface: #11141a;
-      --bg-surface-raised: #171b23;
-      --bg-surface-hover: #1f242f;
-      --bg-surface-active: #272e3c;
-      
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-strong: rgba(255, 255, 255, 0.16);
-      --border-focus: #d9777f;
-      
+
+      /* Calm Graphite & Single Plum Accent (Quiet Luxury) */
+      --bg-base: #0b0d11;
+      --bg-surface: #12151c;
+      --bg-surface-raised: #181c24;
+      --bg-surface-hover: #202530;
+      --bg-surface-active: #282e3b;
+
+      --border-subtle: rgba(243, 245, 248, 0.08);
+      --border-strong: rgba(243, 245, 248, 0.16);
+      --border-focus: #8b5cf6;
+
       --text-primary: #f3f5f8;
-      --text-secondary: #9da6b5;
-      --text-muted: #5e6676;
-      
-      /* Brand Accent: Aura Nail & Pedi Studio Orchid Plum */
-      --accent: #d9777f;
-      --accent-hover: #c9656e;
-      --accent-subtle: rgba(217, 119, 127, 0.12);
-      --accent-border: rgba(217, 119, 127, 0.35);
-      --accent-text: #ffffff;
-      
-      --success: #2ec47c;
-      --success-subtle: rgba(46, 196, 124, 0.12);
-      --success-border: rgba(46, 196, 124, 0.3);
-      
-      --warning: #e59a38;
-      --warning-subtle: rgba(229, 154, 56, 0.12);
-      
-      --danger: #e25555;
-      --danger-subtle: rgba(226, 85, 85, 0.12);
+      --text-secondary: #a1aab8;
+      --text-muted: #6c7587;
+
+      /* Single Contrast-Safe Accent (>= 5.7:1 with #f8fafc) */
+      --accent: #6d28d9;
+      --accent-hover: #5b21b6;
+      --accent-ink: #c4b5fd;
+      --accent-subtle: rgba(109, 40, 217, 0.14);
+      --accent-border: rgba(139, 92, 246, 0.35);
+      --accent-text: #f8fafc;
+
+      --success: #15803d;
+      --success-ink: #4ade80;
+      --success-subtle: rgba(34, 197, 94, 0.12);
+      --success-border: rgba(34, 197, 94, 0.28);
+
+      --warning: #d97706;
+      --warning-ink: #fbbf24;
+      --warning-subtle: rgba(217, 119, 6, 0.14);
+
+      --danger: #dc2626;
+      --danger-ink: #f87171;
+      --danger-subtle: rgba(220, 38, 38, 0.14);
       
       --radius-xs: 4px;
       --radius-sm: 8px;
@@ -72,8 +78,10 @@
       --text-secondary: #505a69;
       --text-muted: #838e9e;
       
-      --accent: #7a3bbd;
-      --accent-hover: #672ea5;
+      --accent: #6d28d9;
+      --accent-hover: #5b21b6;
+      --accent-ink: #5b21b6;
+      --success-ink: #15803d;
       --accent-subtle: rgba(122, 59, 189, 0.08);
       --accent-border: rgba(122, 59, 189, 0.25);
       --accent-text: #ffffff;
@@ -89,12 +97,10 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* =========================================================================
-       LUXURY DARK CUSTOM SCROLLBARS (ПО ВСЬОМУ САЙТУ ТА В АДМІНЦІ)
-       ========================================================================= */
+    /* Quiet Neutral Scrollbars */
     * {
       scrollbar-width: thin;
-      scrollbar-color: rgba(168, 85, 247, 0.45) rgba(255, 255, 255, 0.03);
+      scrollbar-color: rgba(243, 245, 248, 0.18) transparent;
     }
 
     *::-webkit-scrollbar {
@@ -103,20 +109,16 @@
     }
 
     *::-webkit-scrollbar-track {
-      background: rgba(13, 17, 23, 0.6);
-      border-radius: 9999px;
+      background: transparent;
     }
 
     *::-webkit-scrollbar-thumb {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(236, 72, 153, 0.45));
+      background: rgba(243, 245, 248, 0.18);
       border-radius: 9999px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.2s ease;
     }
 
     *::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.8), rgba(236, 72, 153, 0.8));
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+      background: rgba(243, 245, 248, 0.32);
     }
 
     *::-webkit-scrollbar-button {
@@ -129,244 +131,103 @@
       background: transparent;
     }
 
-    /* Global Dark Options for Select Elements */
     select, select option, select optgroup {
-      background-color: #11141a !important;
-      color: #ffffff !important;
+      background-color: var(--bg-surface) !important;
+      color: var(--text-primary) !important;
     }
 
-    /* Custom Luxury Dropdowns for Dark Theme */
-    .custom-select-wrap {
-      position: relative;
-      width: 100%;
-      user-select: none;
-    }
-
-    .custom-select-trigger {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      width: 100%;
-      padding: 11px 14px;
-      background: #11141a;
-      border: 1px solid rgba(168, 85, 247, 0.3);
-      border-radius: var(--radius-sm);
-      color: #fff;
-      font-size: 13.5px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    .custom-select-trigger:hover {
-      border-color: var(--accent);
-      background: #161b22;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.25);
-    }
-
-    .custom-select-wrap.open .custom-select-trigger {
-      border-color: #c084fc;
-      box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
-    }
-
-    .custom-select-trigger .trigger-content {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .custom-select-trigger .trigger-arrow {
-      font-size: 10px;
-      color: var(--text-muted);
-      transition: transform 0.2s ease;
-      flex-shrink: 0;
-    }
-
-    .custom-select-wrap.open .trigger-arrow {
-      transform: rotate(180deg);
-      color: #c084fc;
-    }
-
-    .custom-select-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      right: 0;
-      background: #11141a;
-      border: 1px solid rgba(168, 85, 247, 0.4);
-      border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 16px rgba(168, 85, 247, 0.25);
-      z-index: 1000;
-      max-height: 260px;
-      overflow-y: auto;
-      padding: 6px;
-      backdrop-filter: blur(12px);
-    }
-
-    .custom-select-wrap.open .custom-select-menu {
-      display: block;
-      animation: menuFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes menuFadeIn {
-      from { opacity: 0; transform: translateY(-6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .custom-select-option {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 9px 12px;
-      border-radius: 8px;
-      font-size: 13px;
-      color: #e2e8f0;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .custom-select-option:hover {
-      background: rgba(168, 85, 247, 0.18);
-      color: #fff;
-    }
-
-    .custom-select-option.selected {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.2));
-      color: #fff;
-      font-weight: 600;
-      border: 1px solid rgba(168, 85, 247, 0.35);
-    }
-
-    .custom-select-option .opt-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .custom-select-option .opt-check {
-      font-size: 12px;
-      color: #4ade80;
-      opacity: 0;
-    }
-
-    .custom-select-option.selected .opt-check {
-      opacity: 1;
-    }
-
-        /* Stories Interactive Choice Controls (Zero dropdown hassle) */
+    /* Stories Interactive Controls (flat, clean containment) */
     .stories-choice-card {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 9px 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1.5px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
+      gap: 12px;
+      padding: 10px 12px;
+      background: var(--bg-surface-raised);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
       cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: background-color 0.15s ease, border-color 0.15s ease;
       user-select: none;
     }
     .stories-choice-card:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(168, 85, 247, 0.4);
-      transform: translateY(-1px);
+      background: var(--bg-surface-hover);
+      border-color: var(--border-strong);
     }
     .stories-choice-card.active {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.18));
-      border-color: #c084fc;
-      box-shadow: 0 4px 14px rgba(168, 85, 247, 0.35);
+      background: var(--accent-subtle);
+      border-color: var(--accent-border);
     }
 
     .stories-choice-pill {
       padding: 7px 14px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 9999px;
-      color: #cbd5e1;
+      background: var(--bg-surface-raised);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: var(--text-secondary);
       font-size: 12.5px;
-      font-weight: 600;
+      font-weight: 500;
       cursor: pointer;
-      transition: all 0.18s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
       user-select: none;
     }
     .stories-choice-pill:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(168, 85, 247, 0.4);
-      color: #fff;
+      background: var(--bg-surface-hover);
+      border-color: var(--border-strong);
+      color: var(--text-primary);
     }
     .stories-choice-pill.active {
-      background: linear-gradient(135deg, #a855f7, #ec4899);
-      border-color: transparent;
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(168, 85, 247, 0.4);
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-text);
+      font-weight: 600;
     }
 
     .stories-time-btn {
-      padding: 4px 10px;
-      font-size: 11.5px;
-      font-weight: 700;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #94a3b8;
+      background: var(--bg-surface-raised);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
     .stories-time-btn:hover {
-      border-color: #c084fc;
-      color: #fff;
+      border-color: var(--border-strong);
+      color: var(--text-primary);
     }
     .stories-time-btn.active {
-      background: rgba(46, 196, 124, 0.2);
-      border-color: #4ade80;
-      color: #4ade80;
-      font-weight: 800;
+      background: var(--success-subtle);
+      border-color: var(--success-border);
+      color: var(--success-ink);
     }
 
-    /* Custom Range Sliders (Повзунки) */
     input[type="range"] {
       -webkit-appearance: none;
       appearance: none;
       width: 100%;
       height: 6px;
-      background: rgba(255, 255, 255, 0.08);
+      background: var(--bg-surface-hover);
       border-radius: 9999px;
       outline: none;
-      transition: background 0.2s ease;
     }
     input[type="range"]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #a855f7, #ec4899);
+      background: var(--accent);
       cursor: pointer;
-      border: 2px solid #fff;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      border: 2px solid var(--text-primary);
     }
-    input[type="range"]::-webkit-slider-thumb:hover {
-      transform: scale(1.15);
-      box-shadow: 0 0 14px rgba(168, 85, 247, 0.9);
+
+    html, body {
+      overflow-x: clip;
     }
-    input[type="range"]::-moz-range-thumb {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #a855f7, #ec4899);
-      cursor: pointer;
-      border: 2px solid #fff;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
-    }
-    
+
     body {
       font-family: var(--font-sans);
       background-color: var(--bg-base);
@@ -374,7 +235,6 @@
       min-height: 100vh;
       font-size: 14px;
       line-height: 1.5;
-      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -441,7 +301,7 @@
       border-radius: var(--radius-full);
       cursor: pointer;
       color: var(--text-secondary);
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
       display: flex;
       align-items: center;
       gap: 7px;
@@ -473,7 +333,7 @@
       align-items: center;
       justify-content: center;
       font-size: 14px;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
     }
     .btn-icon:hover {
       background: var(--bg-surface-hover);
@@ -493,7 +353,7 @@
       border-radius: var(--radius-sm);
       cursor: pointer;
       border: 1px solid transparent;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
       font-family: inherit;
       user-select: none;
     }
@@ -558,7 +418,7 @@
       border-radius: var(--radius-full);
       object-fit: cover;
       border: 2px solid var(--accent);
-      box-shadow: 0 4px 20px rgba(147, 86, 212, 0.28);
+      box-shadow: var(--shadow-sm);
       flex-shrink: 0;
     }
 
@@ -589,7 +449,7 @@
       padding: 3px 10px;
       border-radius: var(--radius-full);
       background: var(--accent-subtle);
-      color: var(--accent);
+      color: var(--accent-ink);
       border: 1px solid var(--accent-border);
     }
 
@@ -618,7 +478,7 @@
       align-items: center;
       gap: 6px;
       text-decoration: none;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
     }
 
     .meta-link:hover {
@@ -740,7 +600,7 @@
       color: var(--text-secondary);
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
       user-select: none;
     }
     .cat-btn:hover {
@@ -819,6 +679,7 @@
     }
 
     .service-price {
+      font-variant-numeric: tabular-nums;
       font-size: 17px;
       font-weight: 700;
       color: var(--text-primary);
@@ -853,7 +714,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
       user-select: none;
     }
     .admin-nav-item:hover {
@@ -894,98 +755,54 @@
 
     .kpi-num {
       font-size: 26px;
-      font-weight: 700;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
       letter-spacing: -0.02em;
     }
 
     /* Master Accounts & Profile Switcher */
     .master-account-bar {
-      background: linear-gradient(180deg, rgba(22, 27, 34, 0.85) 0%, rgba(13, 17, 23, 0.95) 100%);
-      border: 1px solid rgba(168, 85, 247, 0.2);
-      border-radius: 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
       padding: 16px 20px;
       margin-bottom: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .master-account-bar::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.6), rgba(236, 72, 153, 0.5), transparent);
     }
 
     .master-filter-strip {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       overflow-x: auto;
-      padding: 6px 2px 10px 2px;
+      padding: 4px 2px 8px 2px;
       scrollbar-width: thin;
-      scrollbar-color: rgba(168, 85, 247, 0.55) rgba(255, 255, 255, 0.04);
+      scrollbar-color: rgba(243, 245, 248, 0.18) transparent;
       -webkit-overflow-scrolling: touch;
       scroll-behavior: smooth;
-    }
-
-    .master-filter-strip::-webkit-scrollbar {
-      height: 5px;
-    }
-
-    .master-filter-strip::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 10px;
-      margin: 0 10px;
-    }
-
-    .master-filter-strip::-webkit-scrollbar-thumb {
-      background: linear-gradient(90deg, #a855f7, #ec4899);
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
-    }
-
-    .master-filter-strip::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(90deg, #c084fc, #f472b6);
-      box-shadow: 0 0 12px rgba(168, 85, 247, 0.7);
-    }
-
-    .master-filter-strip::-webkit-scrollbar-button {
-      display: none !important;
-      width: 0 !important;
-      height: 0 !important;
     }
 
     .master-filter-chip {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 8px 16px 8px 10px;
-      border-radius: 14px;
+      gap: 10px;
+      background: var(--bg-surface-raised);
+      border: 1px solid var(--border-subtle);
+      padding: 8px 14px 8px 10px;
+      border-radius: 10px;
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: background-color 0.15s ease, border-color 0.15s ease;
       user-select: none;
-      position: relative;
       flex-shrink: 0;
     }
 
     .master-filter-chip:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(168, 85, 247, 0.4);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      background: var(--bg-surface-hover);
+      border-color: var(--border-strong);
     }
 
     .master-filter-chip.active {
-      background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(236, 72, 153, 0.16));
-      border: 1.5px solid #c084fc;
-      box-shadow: 0 4px 20px rgba(168, 85, 247, 0.35);
-      transform: translateY(-1px);
+      background: var(--accent-subtle);
+      border-color: var(--accent-border);
     }
 
     .master-chip-avatar-wrap {
@@ -996,28 +813,15 @@
     }
 
     .master-chip-avatar {
-      width: 34px;
-      height: 34px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      transition: border-color 0.2s ease;
+      border: 1px solid var(--border-strong);
     }
 
     .master-filter-chip.active .master-chip-avatar {
-      border-color: #c084fc;
-      box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
-    }
-
-    .master-chip-status-dot {
-      position: absolute;
-      bottom: -1px;
-      right: -1px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #2ec47c;
-      border: 2px solid #0d1117;
+      border-color: var(--accent-ink);
     }
 
     .master-chip-info {
@@ -1028,43 +832,39 @@
 
     .master-chip-title {
       font-size: 13.5px;
-      font-weight: 700;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 5px;
+      font-weight: 600;
+      color: var(--text-primary);
       line-height: 1.25;
     }
 
     .master-chip-sub {
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--text-muted);
-      line-height: 1.2;
+      line-height: 1.25;
       margin-top: 2px;
     }
 
     .master-filter-chip.active .master-chip-sub {
-      color: #e9d5ff;
+      color: var(--accent-ink);
     }
 
     .master-chip-count {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 3px 9px;
-      border-radius: 12px;
-      font-size: 11.5px;
-      font-weight: 800;
-      color: var(--text-muted);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      transition: all 0.2s ease;
+      background: var(--bg-surface);
+      padding: 2px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
       min-width: 24px;
       text-align: center;
     }
 
     .master-filter-chip.active .master-chip-count {
-      background: linear-gradient(135deg, #a855f7, #ec4899);
-      color: #fff;
+      background: var(--accent);
+      color: var(--accent-text);
       border-color: transparent;
-      box-shadow: 0 2px 8px rgba(168, 85, 247, 0.4);
     }
 
     /* Data Cards & Tables */
@@ -1131,7 +931,7 @@
       padding: 3px 8px;
       border-radius: var(--radius-full);
     }
-    .badge-success { background: var(--success-subtle); color: var(--success); border: 1px solid var(--success-border); }
+    .badge-success { background: var(--success-subtle); color: var(--success-ink); border: 1px solid var(--success-border); }
     .badge-warning { background: var(--warning-subtle); color: var(--warning); }
     .badge-neutral { background: var(--bg-surface-raised); color: var(--text-secondary); border: 1px solid var(--border-subtle); }
 
@@ -1236,7 +1036,7 @@
       align-items: center;
       gap: 12px;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
       user-select: none;
     }
     .master-card-select:hover {
@@ -1279,7 +1079,7 @@
       font-weight: 500;
       color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
     }
     .slot-pill:hover { border-color: var(--border-strong); color: var(--text-primary); }
     .slot-pill.active {
@@ -1348,7 +1148,7 @@
       font-weight: 500;
       color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
       user-select: none;
     }
     .tech-opt-pill:hover {
@@ -1356,11 +1156,11 @@
       color: var(--text-primary);
     }
     .tech-opt-pill.active {
-      background: #7c3aed;
-      color: #fff;
-      border-color: #7c3aed;
+      background: var(--accent);
+      color: var(--accent-text);
+      border-color: var(--accent);
       font-weight: 600;
-      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
+      
     }
     .tech-bind-badge {
       font-size: 10px;
@@ -1467,7 +1267,7 @@
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-strong);
       box-shadow: var(--shadow-md);
-      background: #000;
+      background: var(--bg-base);
       overflow: hidden;
     }
 
@@ -1495,7 +1295,7 @@
       font-weight: 500;
       color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
       display: inline-flex;
       align-items: center;
       gap: 5px;
@@ -1671,6 +1471,7 @@
         font-size: 14px;
       }
       .service-price {
+      font-variant-numeric: tabular-nums;
         font-size: 15px;
       }
       .master-grid {
@@ -1731,7 +1532,23 @@
         font-size: 16px !important; /* Prevents auto zoom-in on iOS */
       }
     }
-  </style>
+  
+    button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible,
+    .mode-pill:focus-visible, .admin-nav-item:focus-visible, .master-filter-chip:focus-visible,
+    .stories-choice-card:focus-visible, .slot-pill:focus-visible, .cat-btn:focus-visible {
+      outline: 2px solid var(--border-focus);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+</style>
 </head>
 <body>
 
@@ -1741,13 +1558,13 @@
       <div style="display: flex; align-items: center; gap: 10px;">
         <img src="./assets/img/studio_interior.jpg" alt="Aura Nail & Pedi Studio" style="width:36px;height:36px;border-radius:var(--radius-full);object-fit:cover;">
         <div class="brand-meta">
-          <span class="brand-name">Aura Nail & Pedi Studio 💜</span>
-          <span class="brand-sub">м. Київ, Французький б-р, 26/1</span>
+          <span class="brand-name">Aura Nail & Pedi Studio</span>
+          <span class="brand-sub">Київ, вул. Велика Васильківська, 28</span>
         </div>
       </div>
       <div class="header-actions">
-        <button class="btn-icon" id="themeBtn" title="Змінити тему">🌓</button>
-        <button class="btn-icon" id="resetBtn" title="Скинути дані">🔄</button>
+        <button class="btn-icon" id="themeBtn" title="Змінити тему" aria-label="Змінити тему"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+        <button class="btn-icon" id="resetBtn" title="Скинути демо-дані" aria-label="Скинути демо-дані"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></button>
       </div>
     </div>
 
@@ -1755,15 +1572,15 @@
     <div class="mode-pills">
       <div class="mode-pill active" id="btnModeClient" onclick="switchMode('client')">
         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-        <span>📱 Онлайн-запис</span>
+        <span>Онлайн-запис</span>
       </div>
       <div class="mode-pill" id="btnModeAdmin" onclick="switchMode('admin')">
         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-        <span>💻 Студійна CRM</span>
+        <span>Студійна CRM</span>
       </div>
-      <div class="mode-pill" id="btnModeBrief" onclick="openSampleBriefModal('apt-01')">
+      <div class="mode-pill" id="btnModeBrief" onclick="openSampleBriefModal('apt-1')">
         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
-        <span>📋 Бриф після візиту</span>
+        <span>Бриф після візиту</span>
       </div>
     </div>
   </header>
@@ -1780,12 +1597,12 @@
             <h1 class="salon-name">Aura Nail & Pedi Studio</h1>
             <span class="verified-badge">✓ Офіційний простір</span>
           </div>
-          <p class="salon-tagline">Простір бездоганного манікюру та Smart-педикюру 💅🦶 • Манікюр • Smart-педикюр • Комплекси в 4 руки • Подологічний догляд</p>
+          <p class="salon-tagline">Студія манікюру, Smart-педикюру та комплексного догляду в 4 руки у центрі Києва</p>
           <div class="salon-meta-pills">
-            <span class="meta-pill">📍 вул. Велика Васильківська, 28</span>
-            <span class="meta-pill">🕒 Вт–Нд: 10:00 – 20:00</span>
-            <span class="meta-pill">📞 +38 075 645 77 35</span>
-            <a href="https://instagram.com/aura.nail.pedi.kiev" target="_blank" class="meta-pill meta-link">📷 @aura.nail.pedi.kiev ↗</a>
+            <span class="meta-pill"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> вул. Велика Васильківська, 28</span>
+            <span class="meta-pill"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg> Вт–Нд, 10:00–20:00</span>
+            <span class="meta-pill"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> +38 075 645 77 35</span>
+            <a href="https://instagram.com/aura.nail.pedi.kiev" target="_blank" rel="noopener noreferrer" class="meta-pill meta-link">@aura.nail.pedi.kiev</a>
           </div>
         </div>
       </div>
@@ -1793,8 +1610,8 @@
       <!-- Real Works Photo Gallery (Responsive: 6 cols on PC, scroll on mobile) -->
       <div class="salon-gallery-section">
         <div class="gallery-title-row">
-          <span>✨ Роботи майстрів студії</span>
-          <span class="gallery-hint">Всі фото з реального профілю @aura.nail.pedi.kiev</span>
+          <span>Роботи майстрів студії</span>
+          <span class="gallery-hint">Портфоліо @aura.nail.pedi.kiev</span>
         </div>
         <div class="salon-gallery-grid">
           <div class="gallery-card">
@@ -1847,7 +1664,7 @@
           <div class="service-meta">
             <span>⏱ 90 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -1863,7 +1680,7 @@
           <div class="service-meta">
             <span>⏱ 45 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -1879,7 +1696,7 @@
           <div class="service-meta">
             <span>⏱ 60 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -1895,7 +1712,7 @@
           <div class="service-meta">
             <span>⏱ 50 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -1911,7 +1728,7 @@
           <div class="service-meta">
             <span>⏱ 90 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -1927,7 +1744,7 @@
           <div class="service-meta">
             <span>⏱ 60 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -1943,7 +1760,7 @@
           <div class="service-meta">
             <span>⏱ 60 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -1959,7 +1776,7 @@
           <div class="service-meta">
             <span>⏱ 75 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -1975,7 +1792,7 @@
           <div class="service-meta">
             <span>⏱ 105 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -1991,7 +1808,7 @@
           <div class="service-meta">
             <span>⏱ 120 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -2007,7 +1824,7 @@
           <div class="service-meta">
             <span>⏱ 60 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -2023,7 +1840,7 @@
           <div class="service-meta">
             <span>⏱ 105 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -2039,7 +1856,7 @@
           <div class="service-meta">
             <span>⏱ 120 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -2055,7 +1872,7 @@
           <div class="service-meta">
             <span>⏱ 100 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -2071,7 +1888,7 @@
           <div class="service-meta">
             <span>⏱ 90 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -2087,7 +1904,7 @@
           <div class="service-meta">
             <span>⏱ 20 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -2103,7 +1920,7 @@
           <div class="service-meta">
             <span>⏱ 20 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -2119,7 +1936,7 @@
           <div class="service-meta">
             <span>⏱ 30 хв</span>
             <span>•</span>
-            <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+            <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
           </div>
         </div>
         <div class="service-price-block">
@@ -2135,19 +1952,19 @@
   <!-- ===================================================================== -->
   <div id="adminPortalView" style="display: none;">
     <aside class="admin-sidebar">
-      <div style="padding: 12px 14px; margin-bottom: 14px; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px;">
-        <div style="color: var(--text-muted); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Поточний профіль:</div>
-        <div style="font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px;" id="sidebarActiveMasterName">
-          <span>👑 Власниця студії</span>
+      <div style="padding: 12px 14px; margin-bottom: 14px; background: var(--bg-surface-raised); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); font-size: 12px;">
+        <div style="color: var(--text-muted); font-size: 11px; margin-bottom: 4px;">Поточний профіль</div>
+        <div style="font-weight: 600; color: var(--text-primary); display: flex; align-items: center; gap: 6px;" id="sidebarActiveMasterName">
+          <span>Власниця студії</span>
         </div>
-        <div style="font-size: 11px; color: var(--accent); margin-top: 2px;" id="sidebarActiveMasterRole">Всі майстри</div>
+        <div style="font-size: 11.5px; color: var(--accent-ink); margin-top: 2px;" id="sidebarActiveMasterRole">Всі майстри</div>
       </div>
-      <div class="admin-nav-item active" data-atab="calendar">🗓 Розклад & Записи</div>
-      <div class="admin-nav-item" data-atab="clients">👥 Клієнти & Бріфи</div>
-      <div class="admin-nav-item" data-atab="inventory">📦 Склад матеріалів (BOM)</div>
-      <div class="admin-nav-item" data-atab="techcards">⚙️ Техкарти & Норми розходу</div>
-      <div class="admin-nav-item" data-atab="finance">💰 Фінанси & Прибуток</div>
-      <div class="admin-nav-item" data-atab="stories">📱 Stories Віконця</div>
+      <div class="admin-nav-item active" data-atab="calendar"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><rect x="3" y="4" width="18" height="18" rx="2"/><path stroke-linecap="round" d="M16 2v4M8 2v4M3 10h18"/></svg> <span>Розклад та записи</span></div>
+      <div class="admin-nav-item" data-atab="clients"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg> <span>Клієнти та бріфи</span></div>
+      <div class="admin-nav-item" data-atab="inventory"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg> <span>Склад матеріалів</span></div>
+      <div class="admin-nav-item" data-atab="techcards"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg> <span>Техкарти та норми</span></div>
+      <div class="admin-nav-item" data-atab="finance"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><rect x="2" y="5" width="20" height="14" rx="2"/><path stroke-linecap="round" d="M2 10h20M16 14h2"/></svg> <span>Фінанси та прибуток</span></div>
+      <div class="admin-nav-item" data-atab="stories"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><rect x="5" y="2" width="14" height="20" rx="2"/><path stroke-linecap="round" d="M12 18h.01"/></svg> <span>Stories віконця</span></div>
     </aside>
 
     <div class="admin-content">
@@ -2156,11 +1973,11 @@
       <div class="master-account-bar">
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
           <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 14px; font-weight: 700; color: #fff;">👤 Особистий кабінет майстра / Фільтр CRM:</span>
-            <span class="badge" id="activeMasterBadge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3);">👑 Власниця (Всі записи студії)</span>
+            <span style="font-size: 14px; font-weight: 700; color: #fff;">Фільтр кабінету майстра</span>
+            <span class="badge" id="activeMasterBadge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3);">Всі майстри студії</span>
           </div>
           <div style="font-size: 12px; color: var(--text-muted);" id="activeMasterHelpText">
-            💡 Оберіть майстра, щоб вся адмінка (розклад, клієнти, склад, техкарти, фінанси, stories) відображала тільки його дані
+            Оберіть майстра для перегляду особистого розкладу, бази клієнтів і каси
           </div>
         </div>
         <div class="master-filter-strip" id="masterFilterStrip">
@@ -2184,7 +2001,7 @@
             <div style="font-size: 11.5px; color: var(--text-secondary);" id="adminKpiRevenueSub">Сер. чек: 912 ₴</div>
           </div>
           <div class="kpi-card">
-            <div style="font-size: 12px; color: var(--text-muted);" id="adminKpiCostTitle">Собівартість матеріалів (BOM)</div>
+            <div style="font-size: 12px; color: var(--text-muted);" id="adminKpiCostTitle">Витрата матеріалів</div>
             <div class="kpi-num" id="adminKpiCost">310 ₴</div>
             <div style="font-size: 11.5px; color: var(--text-secondary);" id="adminKpiCostSub">Точне списання за брифами</div>
           </div>
@@ -2226,7 +2043,7 @@
       <section id="adminTabClients" class="admin-subtab" style="display: none;">
         <div class="data-card">
           <div class="data-header">
-            <strong style="font-size: 14.5px;" id="adminClientsTableTitle">Клієнтська база studio Aura Nail & Pedi Studio</strong>
+            <strong style="font-size: 14.5px;" id="adminClientsTableTitle">Клієнтська база студії Aura Nail & Pedi</strong>
             <input type="text" class="input-field" placeholder="Пошук за ім'ям або телефоном..." style="max-width: 280px;" id="clientSearchInput" oninput="renderAdminClients()">
           </div>
           <div class="table-responsive">
@@ -2237,7 +2054,7 @@
                   <th>Телефон</th>
                   <th>Майстер</th>
                   <th>Візитів</th>
-                  <th>LTV (Виручка)</th>
+                  <th>Сума візитів</th>
                   <th>Останній візит</th>
                   <th>Алергії / Нотатки</th>
                   <th style="text-align: right;">Картка</th>
@@ -2255,7 +2072,7 @@
       <section id="adminTabInventory" class="admin-subtab" style="display: none;">
         <div class="data-card">
           <div class="data-header">
-            <strong style="font-size: 14.5px;" id="adminInventoryTableTitle">Склад матеріалів (BOM Списання)</strong>
+            <strong style="font-size: 14.5px;" id="adminInventoryTableTitle">Склад матеріалів (Автосписання матеріалів)</strong>
             <div style="display: flex; gap: 8px;">
               <select class="input-field" id="invCatFilter" style="width: auto; padding: 6px 10px;">
                 <option value="all">Всі напрямки</option>
@@ -2294,12 +2111,12 @@
         <div class="data-card" style="padding: 22px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 12px;">
             <div>
-              <h3 style="font-size: 16px; font-weight: 700; color: #fff;" id="adminTechcardsTitle">⚙️ Технологічні карти & Норми списання матеріалів (BOM)</h3>
+              <h3 style="font-size: 16px; font-weight: 700; color: #fff;" id="adminTechcardsTitle">Технологічні карти та норми витрат</h3>
               <div style="font-size: 12.5px; color: var(--text-muted); margin-top: 3px;" id="adminTechcardsSub">
                 Налаштуйте опції процедур та точну прив'язку витрат матеріалів зі складу для автоматичного списання в брифі
               </div>
             </div>
-            <button class="btn btn-primary btn-sm" onclick="saveState(); alert('✨ Технологічні карти та норми списання успішно збережено!');">💾 Зберегти зміни</button>
+            <button class="btn btn-primary btn-sm" onclick="saveState(); alert('✨ Технологічні карти та норми списання успішно збережено!');"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-8H7v8M7 3v5h8"/></svg> Зберегти зміни</button>
           </div>
 
           <!-- Category Selector for Tech Cards -->
@@ -2356,23 +2173,22 @@
         <div style="display: grid; grid-template-columns: 340px 1fr; gap: 28px; align-items: start;">
           <!-- Canvas Preview Column -->
           <div style="display: flex; flex-direction: column; gap: 12px;">
-            <div class="canvas-box" style="position: relative; background: #000; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 36px rgba(0,0,0,0.6); border: 1.5px solid rgba(168, 85, 247, 0.3);">
+            <div class="canvas-box" style="position: relative; background: var(--bg-base); border-radius: 14px; overflow: hidden; border: 1px solid var(--border-strong);">
               <canvas id="adminStoriesCanvas" width="1080" height="1920" style="width: 100%; height: 100%; object-fit: contain; display: block;"></canvas>
             </div>
-            <button class="btn btn-primary" id="btnDownloadStory" style="width: 100%; padding: 14px; font-size: 14.5px; font-weight: 700; box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);">
-              📥 Завантажити Stories (PNG 1080x1920)
+            <button class="btn btn-primary" id="btnDownloadStory" style="width: 100%; padding: 12px 16px; font-size: 14px; font-weight: 600;">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> Завантажити Stories (PNG 1080×1920)
             </button>
           </div>
 
           <!-- Controls Column -->
-          <div class="data-card" style="padding: 24px; display: flex; flex-direction: column; gap: 20px; background: rgba(22, 27, 34, 0.9); border: 1px solid rgba(168, 85, 247, 0.25); border-radius: 18px;">
+          <div style="display: flex; flex-direction: column; gap: 20px; padding: 4px 0;">
             <div>
-              <h3 style="font-size: 17px; color: #fff; margin: 0; display: flex; align-items: center; gap: 8px;">
-                <span>📱 Генератор Stories «Вільні віконця»</span>
-                <span class="badge" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); font-size: 11px;">Instagram Ready</span>
-              </h3>
-              <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.4; margin: 6px 0 0 0;">
-                Створюйте готові брендовані Stories для <strong>@aura.nail.pedi.kiev</strong>. Натискайте на майстра, напрямок та віконця — результат на Canvas оновлюється миттєво!
+              <h2 style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin: 0;">
+                Генератор Stories «Вільні віконця»
+              </h2>
+              <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.45; margin: 6px 0 0 0;">
+                Оберіть майстра, напрямок, дату та вільні години — макет для <strong>@aura.nail.pedi.kiev</strong> оновиться автоматично.
               </p>
             </div>
 
@@ -2447,7 +2263,7 @@
             </div>
 
             <!-- 4. Quick Time Chips & Hours Input -->
-            <div style="background: rgba(13, 17, 23, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 14px;">
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 16px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                 <label class="form-lbl" style="margin: 0; font-size: 12.5px; font-weight: 700; color: #fff;">
                   4. Вільні години для запису:
@@ -2491,7 +2307,7 @@
       <div class="modal-head">
         <div>
           <strong style="font-size: 15px;" id="bookModalServiceName">Запис на послугу</strong>
-          <div style="font-size: 12px; color: var(--text-muted);" id="bookModalServicePrice">Aura Nail & Pedi Studio • Французький бульвар, 26/1</div>
+          <div style="font-size: 12px; color: var(--text-muted);" id="bookModalServicePrice">Aura Nail & Pedi Studio • вул. Велика Васильківська, 28</div>
         </div>
         <button class="btn-icon" onclick="closeClientBookingModal()">✕</button>
       </div>
@@ -2596,6 +2412,47 @@
     </div>
   </div>
 
+
+  <!-- ===================================================================== -->
+  <!-- MODAL 1B: TELEGRAM BOT BOOKING CONFIRMATION DEMO (700 UAH FEATURE)    -->
+  <!-- ===================================================================== -->
+  <div class="modal-backdrop" id="tgBookingDemoModal">
+    <div class="modal-box" style="max-width: 480px;">
+      <div class="modal-head">
+        <div>
+          <strong style="font-size: 15px;">Запис створено та надіслано в Telegram</strong>
+          <div style="font-size: 12px; color: var(--text-muted);" id="tgConfirmSubtitle">Клієнтка отримує це сповіщення автоматично</div>
+        </div>
+        <button class="btn-icon" onclick="closeTgBookingDemoModal()" aria-label="Закрити">✕</button>
+      </div>
+      <div class="modal-content">
+        <div class="tg-chat-mockup">
+          <div class="tg-chat-header">
+            <img src="./assets/img/logo.png" class="tg-chat-avatar" alt="Aura Nail & Pedi Studio">
+            <div>
+              <div style="font-weight: 600; font-size: 13px;">Aura Nail & Pedi Bot</div>
+              <div style="font-size: 11px; color: #64b5f6;">автоматичний асистент студії</div>
+            </div>
+          </div>
+          <div class="tg-bubble">
+            <div id="tgConfirmBubbleText" style="white-space: pre-wrap;"></div>
+            <div class="tg-inline-buttons">
+              <div class="tg-btn" onclick="alert('Нагадування за 24 години та за 2 години до візиту налаштовані автоматично.')">Нагадати за 24 год до візиту</div>
+              <div class="tg-btn" onclick="alert('Адреса: м. Київ, вул. Велика Васильківська, 28 (1 поверх).')">Відкрити маршрут на карті</div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size: 12.5px; color: var(--text-secondary); line-height: 1.45;">
+          Запис одразу потрапив до журналу CRM майстра. Нагадування клієнтці спрацює автоматично без ручних переписок.
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-secondary" onclick="closeTgBookingDemoModal()">Залишитися на записі</button>
+        <button class="btn btn-primary" onclick="goToAdminAfterBooking()">Відкрити запис у CRM</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ===================================================================== -->
   <!-- MODAL 2: VISIT BRIEF & EDITABLE BOM WRITE-OFF                         -->
   <!-- ===================================================================== -->
@@ -2608,7 +2465,7 @@
             <span class="badge badge-accent" id="briefDirBadge">💅 Манікюр</span>
             <span class="badge badge-success" id="briefStatusBadge">✓ Процедуру завершено</span>
           </div>
-          <div style="font-size: 12px; color: var(--text-muted);" id="briefModalSubtitle">Студія Aura Nail & Pedi Studio • Французький бульвар, 26/1</div>
+          <div style="font-size: 12px; color: var(--text-muted);" id="briefModalSubtitle">Студія Aura Nail & Pedi Studio • вул. Велика Васильківська, 28</div>
         </div>
         <button class="btn-icon" onclick="closeBriefModal()">✕</button>
       </div>
@@ -2636,7 +2493,7 @@
         <!-- Before / After Real Photo Comparison -->
         <div class="form-row">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
-            <label class="form-lbl" style="font-size: 13px; margin: 0;">📸 Фотофіксація результату (ДО та ПІСЛЯ процедури)</label>
+            <label class="form-lbl" style="font-size: 13px; margin: 0;">Фото результату (до та після процедури)</label>
             <span style="font-size: 11.5px; color: var(--text-muted);">Зберігається в особистій картці клієнтки назавжди</span>
           </div>
           <div class="photo-grid">
@@ -2673,7 +2530,7 @@
         <!-- EDITABLE BOM CONSUMED MATERIALS -->
         <div class="form-row">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-            <label class="form-lbl" style="font-size: 13px; margin: 0;">📦 Фактично списані розхідники (BOM Списання зі складу JuNailCRM)</label>
+            <label class="form-lbl" style="font-size: 13px; margin: 0;">📦 Фактично списані розхідники (Автосписання матеріалів зі складу JuNailCRM)</label>
             <button class="btn btn-secondary btn-sm" onclick="addMaterialToBriefRow()">+ Додати матеріал зі складу</button>
           </div>
           
@@ -2718,14 +2575,14 @@
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
             <div>
               <strong style="font-size: 14.5px; color: var(--text-primary); display: flex; align-items: center; gap: 6px;">
-                <span>📲 Центр нагадувань та комунікації з клієнткою</span>
-                <span class="badge badge-accent" style="font-size: 11px;">Smart Retention</span>
+                <span>Центр нагадувань у Telegram і месенджерах</span>
+                
               </strong>
               <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
                 Оберіть готовий автоматичний сценарій або введіть власний текст для надсилання в 1 клік:
               </div>
             </div>
-            <span class="badge badge-success" style="font-size: 11px;">✓ AI-ланцюжок активовано</span>
+            <span class="badge badge-success" style="font-size: 11.5px;">Автосценарії активні</span>
           </div>
 
           <!-- Preset Selector Pills -->
@@ -2773,7 +2630,7 @@
               <div class="tg-inline-buttons" id="tgPreviewInlineButtons">
                 <div class="tg-btn" onclick="sendTgActionDemo('rate')">⭐️⭐️⭐️⭐️⭐️ Оцінити якість візиту</div>
                 <div class="tg-btn" onclick="sendTgActionDemo('book')">📅 Записатися на наступний візит в 1 клік</div>
-                <div class="tg-btn" onclick="sendTgActionDemo('route')">📍 Французький бульвар, 26/1 (Маршрут на карті)</div>
+                <div class="tg-btn" onclick="sendTgActionDemo('route')">📍 вул. Велика Васильківська, 28 (Маршрут на карті)</div>
               </div>
             </div>
           </div>
@@ -2781,7 +2638,7 @@
           <!-- Action Buttons Bar -->
           <div class="send-action-bar">
             <button class="btn btn-primary" onclick="sendSelectedReminderTelegram()" style="background: #2481cc; border-color: #2481cc;">
-              ✈️ Надіслати в Telegram зараз
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Надіслати в Telegram
             </button>
             <button class="btn btn-secondary" onclick="sendSelectedReminderViber()" style="color: #7360f2; border-color: rgba(115, 96, 242, 0.4);">
               🟣 Відкрити у Viber
@@ -2790,10 +2647,10 @@
               🟢 Відкрити у WhatsApp
             </button>
             <button class="btn btn-secondary" onclick="copyReminderTextToClipboard()">
-              📋 Скопіювати текст
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><rect x="9" y="9" width="13" height="13" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Скопіювати текст
             </button>
             <button class="btn btn-secondary" onclick="scheduleAutomatedReminderDemo()">
-              ⏰ Запланувати в календарі
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg> Запланувати нагадування
             </button>
           </div>
         </div>
@@ -2802,7 +2659,7 @@
 
       <div class="modal-foot">
         <button class="btn btn-secondary" onclick="closeBriefModal()">Закрити</button>
-        <button class="btn btn-primary" onclick="saveBriefChanges()">💾 Зберегти бриф та списати матеріали</button>
+        <button class="btn btn-primary" onclick="saveBriefChanges()"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-8H7v8M7 3v5h8"/></svg> Зберегти бриф та списати матеріали</button>
       </div>
     </div>
   </div>
@@ -2816,7 +2673,7 @@
       <div class="modal-head">
         <div>
           <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 16px;">⚙️ Редактор технологічних карт & прив'язки матеріалів</strong>
+            <strong style="font-size: 16px;">Редактор технологічних карт та витрат</strong>
             <span class="badge badge-accent" id="techCardEditorDirBadge">💅 Манікюр</span>
           </div>
           <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
@@ -2844,10 +2701,10 @@
         </div>
       </div>
       <div class="modal-foot" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-        <button class="btn btn-secondary" style="color: var(--danger);" onclick="resetTechCardEditorToDefaults()">🔄 Скинути до заводських стандартів JuNailCRM</button>
+        <button class="btn btn-secondary" style="color: var(--danger);" onclick="resetTechCardEditorToDefaults()"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg> Відновити стандартні норми</button>
         <div style="display: flex; gap: 8px;">
           <button class="btn btn-secondary" onclick="closeTechCardEditor()">Закрити</button>
-          <button class="btn btn-primary" onclick="saveTechCardEditorChanges()">💾 Зберегти зміни техкарт</button>
+          <button class="btn btn-primary" onclick="saveTechCardEditorChanges()"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><path stroke-linecap="round" stroke-linejoin="round" d="M17 21v-8H7v8M7 3v5h8"/></svg> Зберегти зміни техкарт</button>
         </div>
       </div>
     </div>
@@ -2990,11 +2847,11 @@
     ];
 
     const INITIAL_APPOINTMENTS = [
-      { id: "apt-1", clientName: "Олена Ковальчук", phone: "+380 97 123 45 67", cat: "Манікюр", serviceName: "Комплекс «All Inclusive Манікюр» (Зняття + комбі + покриття)", time: "10:00", date: "today", master: "Дар\'я", price: 850, status: "confirmed", reminderScheduled: true, reminderDirectSent: true, prepayMethod: "monobank" },
-      { id: "apt-2", clientName: "Ірина Мельник", phone: "+380 93 987 65 43", cat: "Педикюр", serviceName: "Повний Smart-педикюр стоп та пальчиків з покриттям", time: "11:30", date: "today", master: "Аліна", price: 1100, status: "confirmed", reminderScheduled: true, reminderDirectSent: false, prepayMethod: "monobank" },
-      { id: "apt-3", clientName: "Аліна Сидоренко", phone: "+380 50 555 12 34", cat: "Манікюр", serviceName: "Моделювання & Нарощування нігтів (довжина 2)", time: "14:00", date: "today", master: "Дар\'я", price: 1400, status: "confirmed", reminderScheduled: false, reminderDirectSent: false, prepayMethod: "monobank" },
-      { id: "apt-4", clientName: "Вікторія Шевченко", phone: "+380 67 222 33 44", cat: "Комплекс", serviceName: "Duo в 4 руки: «Манікюр All Inclusive + Smart-педикюр»", time: "16:30", date: "today", master: "Валерія", price: 1850, status: "confirmed", reminderScheduled: true, reminderDirectSent: true, prepayMethod: "card" },
-      { id: "apt-5", clientName: "Тетяна Мороз", phone: "+380 99 777 88 99", cat: "Педикюр", serviceName: "Експрес-педикюр пальчиків з покриттям", time: "18:45", date: "today", master: "Аліна", price: 850, status: "pending", reminderScheduled: false, reminderDirectSent: false, prepayMethod: "cash" }
+      { id: "apt-1", client: "Олена Ковальчук", phone: "+380 97 123 45 67", dir: "Манікюр", service: "Комплекс «All Inclusive Манікюр»", time: "10:00", date: "24 лист", master: "Дар'я", masterId: "m-daria", price: 850, cost: 58, status: "Підтверджено", reminderScheduled: true },
+      { id: "apt-2", client: "Ірина Мельник", phone: "+380 93 987 65 43", dir: "Педикюр", service: "Повний Smart-педикюр з покриттям", time: "11:30", date: "24 лист", master: "Аліна", masterId: "m-alina", price: 1100, cost: 68, status: "Підтверджено", reminderScheduled: true },
+      { id: "apt-3", client: "Аліна Сидоренко", phone: "+380 50 555 12 34", dir: "Манікюр", service: "Моделювання та нарощування нігтів", time: "14:00", date: "24 лист", master: "Дар'я", masterId: "m-daria", price: 1400, cost: 84, status: "Підтверджено", reminderScheduled: false },
+      { id: "apt-4", client: "Вікторія Шевченко", phone: "+380 67 222 33 44", dir: "Комплекси в 4 руки", service: "Duo в 4 руки: Манікюр + Smart-педикюр", time: "16:30", date: "24 лист", master: "Валерія", masterId: "m-valeria", price: 1850, cost: 118, status: "Підтверджено", reminderScheduled: true },
+      { id: "apt-5", client: "Тетяна Мороз", phone: "+380 99 777 88 99", dir: "Педикюр", service: "Експрес-педикюр пальчиків з покриттям", time: "18:45", date: "24 лист", master: "Аліна", masterId: "m-alina", price: 850, cost: 45, status: "Очікує", reminderScheduled: false }
     ];
 
     const CANONICAL_CLIENTS = [
@@ -3178,7 +3035,7 @@
     // =========================================================================
     // DEFAULT TECH CARDS (ТЕХНОЛОГІЧНІ КАРТИ З ПРИВ'ЯЗКОЮ РОЗХОДУ МАТЕРІАЛІВ)
     // =========================================================================
-    const STORAGE_KEY = 'aura_nail_pedi_v4_isolated';
+    const STORAGE_KEY = 'aura_nail_pedi_v5_clean';
 
     // Load from LocalStorage with auto-healing and seamless legacy migration
     // Strict isolation: Wipe legacy keys from other salon projects on this origin
@@ -3246,7 +3103,7 @@
     // Reset Data
     document.getElementById('resetBtn').addEventListener('click', () => {
       if (confirm('Скинути всі дані студії Aura Nail & Pedi Studio до початкового стану?')) {
-        ['wild_beauty_crm_state', 'wild_beauty_crm_state_v2', 'wild_beauty_crm_state_v3', 'wild_beauty_crm_state_v4', 'wild_beauty_crm_state_v5'].forEach(k => {
+        [STORAGE_KEY, 'aura_nail_pedi_v4_isolated', 'wild_beauty_crm_state', 'wild_beauty_crm_state_v2', 'wild_beauty_crm_state_v3', 'wild_beauty_crm_state_v4', 'wild_beauty_crm_state_v5'].forEach(k => {
           try { localStorage.removeItem(k); } catch(e){}
         });
         location.reload();
@@ -3285,7 +3142,7 @@
             <div class="service-meta">
               <span>⏱ ${s.duration}</span>
               <span>•</span>
-              <span style="color: var(--accent); font-weight: 550;">BOM списання</span>
+              <span style="color: var(--accent); font-weight: 550;">Стерилізація 100%</span>
             </div>
           </div>
           <div class="service-price-block">
@@ -3482,7 +3339,7 @@
       const titleEl = document.getElementById('bookModalServiceName');
       const priceEl = document.getElementById('bookModalServicePrice');
       if (titleEl) titleEl.innerText = `Запис: ${s.name}`;
-      if (priceEl) priceEl.innerText = `${s.price} ₴ • Тривалість: ${s.duration} • Французький б-р, 26/1`;
+      if (priceEl) priceEl.innerText = `${s.price} ₴ • Тривалість: ${s.duration} • вул. Велика Васильківська, 28`;
     }
     window.onBookingServiceSelectChange = onBookingServiceSelectChange;
 
@@ -3501,7 +3358,7 @@
         serviceSelect.value = s.id;
       }
       document.getElementById('bookModalServiceName').innerText = `Запис: ${s.name}`;
-      document.getElementById('bookModalServicePrice').innerText = `${s.price} ₴ • Тривалість: ${s.duration} • Французький б-р, 26/1`;
+      document.getElementById('bookModalServicePrice').innerText = `${s.price} ₴ • Тривалість: ${s.duration} • вул. Велика Васильківська, 28`;
 
       // Render masters with real photos
       const grid = document.getElementById('bookingMastersGrid');
@@ -3566,14 +3423,30 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
       closeClientBookingModal();
 
-      alert(`🎉 Дякуємо, ${name}!
-
-Ваш запис на "${s.name}" до майстра ${mObj.name} успішно створено на ${chosenFullDate} о ${chosenTime}!
-
-Запис з'явився у Студійній адмін-панелі.`);
-      switchMode('admin');
+      const tgBubble = document.getElementById('tgConfirmBubbleText');
+      if (tgBubble) {
+        tgBubble.innerText = `Вітаємо, ${name}! Ви записані до Aura Nail & Pedi Studio.\n\nПослуга: ${s.name}\nМайстер: ${mObj.name}\nДата та час: ${chosenFullDate} о ${chosenTime}\nВартість: ${s.price} ₴\nАдреса: м. Київ, вул. Велика Васильківська, 28\n\nМи нагадаємо вам у Telegram за 24 години до візиту.`;
+      }
+      const tgModal = document.getElementById('tgBookingDemoModal');
+      if (tgModal) {
+        tgModal.classList.add('open');
+      } else {
+        switchMode('admin');
+      }
     }
     window.confirmClientBooking = confirmClientBooking;
+    function closeTgBookingDemoModal() {
+      const m = document.getElementById('tgBookingDemoModal');
+      if (m) m.classList.remove('open');
+    }
+    window.closeTgBookingDemoModal = closeTgBookingDemoModal;
+
+    function goToAdminAfterBooking() {
+      closeTgBookingDemoModal();
+      switchMode('admin');
+    }
+    window.goToAdminAfterBooking = goToAdminAfterBooking;
+
 
     // =========================================================================
     // ADMIN PORTAL LOGIC
@@ -3654,27 +3527,30 @@
           const clientName = ((apt.client && apt.client !== 'undefined') ? apt.client : (apt.clientName || 'Дар\'я Воронова')).trim();
           const clientPhone = apt.phone || '+38 (067) 345-21-90';
 
+          const displayService = apt.service || apt.serviceName || 'Комплекс манікюр';
+          const displayDir = apt.dir || apt.cat || 'Манікюр';
+          const displayDate = (apt.date && apt.date !== 'today') ? apt.date : '24 лист';
           tr.innerHTML = `
-            <td style="white-space: nowrap;">
-              <strong style="color: #fff; font-size: 13.5px;">${apt.time || '10:30'}</strong>
-              <div style="font-size: 11px; color: var(--accent); font-weight: 600; margin-top: 2px;">📅 ${apt.date || '24 лист'}</div>
+            <td style="white-space: nowrap; font-variant-numeric: tabular-nums;">
+              <strong style="color: var(--text-primary); font-size: 13.5px;">${apt.time || '10:30'}</strong>
+              <div style="font-size: 11.5px; color: var(--accent-ink); font-weight: 500; margin-top: 2px;">${displayDate}</div>
             </td>
             <td>
               <div style="font-weight: 600;">${clientName}</div>
-              <div style="font-size: 11.5px; color: var(--text-muted);">${clientPhone}</div>
+              <div style="font-size: 11.5px; color: var(--text-muted); font-variant-numeric: tabular-nums;">${clientPhone}</div>
             </td>
-            <td><span class="dir-tag">${apt.dir || 'Манікюр'}</span></td>
-            <td>${apt.service || 'Зняття + манікюр + покриття'}</td>
+            <td><span class="dir-tag">${displayDir}</span></td>
+            <td>${displayService}</td>
             <td>
-              <div style="font-weight: 600; color: #fff;">${apt.master || 'Дар\'я'}</div>
-              ${activeId === 'all' ? '<span style="font-size: 11px; color: var(--text-muted);">Майстер студії</span>' : '<span style="font-size: 11px; color: #4ade80;">✓ Особистий запис</span>'}
+              <div style="font-weight: 600; color: var(--text-primary);">${apt.master || "Дар'я"}</div>
+              ${activeId === 'all' ? '<span style="font-size: 11px; color: var(--text-muted);">Майстер студії</span>' : '<span style="font-size: 11px; color: var(--success-ink);">Особистий запис</span>'}
             </td>
-            <td><strong>${price.toLocaleString()} ₴</strong></td>
+            <td style="font-variant-numeric: tabular-nums;"><strong>${price.toLocaleString()} ₴</strong></td>
             <td><span class="badge ${statusClass}">${statusText}</span></td>
             <td style="text-align: right; white-space: nowrap;">
-              <button class="btn btn-primary btn-sm" onclick="openBriefModal('${apt.id}')" style="margin-right: 4px;">📋 Бриф після візиту</button>
-              <button class="btn btn-secondary btn-sm" onclick="openBriefReminderDirect('${apt.id}')" style="margin-right: 4px;" title="Центр нагадувань клієнтці">📲 Нагадування</button>
-              <button class="btn btn-secondary btn-sm" onclick="deleteAppointment('${apt.id}')">✕</button>
+              <button class="btn btn-primary btn-sm" onclick="openBriefModal('${apt.id}')" style="margin-right: 4px;"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg> Бриф</button>
+              <button class="btn btn-secondary btn-sm" onclick="openBriefReminderDirect('${apt.id}')" style="margin-right: 4px;" title="Нагадування клієнтці в Telegram"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> TG-бот</button>
+              <button class="btn btn-secondary btn-sm" onclick="deleteAppointment('${apt.id}')" aria-label="Видалити запис">✕</button>
             </td>
           `;
           tbody.appendChild(tr);
@@ -3719,7 +3595,7 @@
         if (revTitleEl) revTitleEl.innerText = `Очікувана виручка студії`;
         const avgCheck = displayedAppointments.length ? Math.round(totalRev / displayedAppointments.length) : 0;
         if (revSubEl) revSubEl.innerText = `Сер. чек: ${avgCheck.toLocaleString()} ₴`;
-        if (costTitleEl) costTitleEl.innerText = `Собівартість матеріалів (BOM)`;
+        if (costTitleEl) costTitleEl.innerText = `Витрата матеріалів`;
         if (costSubEl) costSubEl.innerText = `Точне списання за брифами`;
         if (profitTitleEl) profitTitleEl.innerText = `Чистий дохід студії`;
         const margin = totalRev > 0 ? (((totalRev - totalCost) / totalRev) * 100).toFixed(1) : '0';
@@ -3779,10 +3655,9 @@
         <div class="master-filter-chip ${isAllActive ? 'active' : ''}" onclick="setActiveMasterAccount('all')" title="Переглянути всі записи студії">
           <div class="master-chip-avatar-wrap">
             <img src="./assets/img/logo.png" class="master-chip-avatar" alt="Всі майстри" onerror="this.src='./assets/img/logo.png'">
-            <div class="master-chip-status-dot"></div>
           </div>
           <div class="master-chip-info">
-            <div class="master-chip-title">👑 Всі майстри</div>
+            <div class="master-chip-title">Всі майстри</div>
             <div class="master-chip-sub">Власниця • Журнал студії</div>
           </div>
           <span class="master-chip-count">${counts.all || 0}</span>
@@ -3793,21 +3668,17 @@
       REAL_MASTERS.forEach(m => {
         if (m.id === 'm-any') return;
         const isActive = (activeId === m.id);
-        const icon = (m.id === 'm-daria') ? '💅'
-                   : (m.id === 'm-alina') ? '🦶'
-                   : '✨';
         const shortRole = (m.id === 'm-daria') ? 'ТОП-Манікюр'
                         : (m.id === 'm-alina') ? 'Smart-Педикюр'
-                        : 'Манікюр & 4 руки';
+                        : 'Манікюр та 4 руки';
 
         html += `
           <div class="master-filter-chip ${isActive ? 'active' : ''}" onclick="setActiveMasterAccount('${m.id}')" title="Кабінет: ${m.name} (${m.role})">
             <div class="master-chip-avatar-wrap">
               <img src="${m.avatar}" class="master-chip-avatar" alt="${m.name}" onerror="this.src='./assets/img/logo.png'">
-              <div class="master-chip-status-dot"></div>
             </div>
             <div class="master-chip-info">
-              <div class="master-chip-title">${icon} ${m.name}</div>
+              <div class="master-chip-title">${m.name}</div>
               <div class="master-chip-sub">${shortRole}</div>
             </div>
             <span class="master-chip-count">${counts[m.id] || 0}</span>
@@ -3827,22 +3698,22 @@
       const helpText = document.getElementById('activeMasterHelpText');
       if (badge) {
         if (activeMaster) {
-          badge.innerHTML = `🟢 Акаунт: <strong>${activeMaster.name}</strong> (${activeMaster.role}) • <span style="text-decoration: underline; cursor: pointer;" onclick="setActiveMasterAccount('all')">Скинути до всіх</span>`;
+          badge.innerHTML = `Акаунт: <strong>${activeMaster.name}</strong> (${activeMaster.role}) • <span style="text-decoration: underline; cursor: pointer;" onclick="setActiveMasterAccount('all')">Скинути до всіх</span>`;
           badge.className = 'badge badge-success';
           badge.style.background = 'rgba(46, 196, 124, 0.15)';
           badge.style.color = '#4ade80';
           badge.style.borderColor = 'rgba(46, 196, 124, 0.3)';
           if (helpText) {
-            helpText.innerHTML = `🔒 <strong>Персональний режим:</strong> всі розділи (розклад, клієнти, склад, техкарти, фінанси, stories) закріплені за майстром <strong>${activeMaster.name}</strong>`;
+            helpText.innerHTML = `<strong>Персональний режим:</strong> всі розділи (розклад, клієнти, склад, техкарти, фінанси, stories) закріплені за майстром <strong>${activeMaster.name}</strong>`;
           }
         } else {
-          badge.innerHTML = `👑 Власниця (Всі майстри студії)`;
+          badge.innerHTML = `Власниця (Всі майстри студії)`;
           badge.className = 'badge badge-info';
           badge.style.background = 'rgba(168, 85, 247, 0.15)';
           badge.style.color = '#c084fc';
           badge.style.borderColor = 'rgba(168, 85, 247, 0.3)';
           if (helpText) {
-            helpText.innerHTML = `💡 Оберіть майстра, щоб вся адмінка (розклад, клієнти, склад, техкарти, фінанси) відображала тільки його дані`;
+            helpText.innerHTML = `Оберіть майстра для перегляду особистого розкладу, клієнтів і каси`;
           }
         }
       }
@@ -3860,7 +3731,7 @@
           sidebarName.innerHTML = `<span>${activeMaster.name}</span>`;
           if (sidebarRole) sidebarRole.innerText = activeMaster.role;
         } else {
-          sidebarName.innerHTML = `<span>👑 Власниця студії</span>`;
+          sidebarName.innerHTML = `<span>Власниця студії</span>`;
           if (sidebarRole) sidebarRole.innerText = 'Всі майстри студії';
         }
       }
@@ -3904,15 +3775,15 @@
     // REMINDER TEMPLATES PER CATEGORY & PRESET
     const REMINDER_TEMPLATES = {
       'Манікюр': {
-        post_visit: `💬 «{ім'я}, дякуємо за візит у @Aura Nail Studio_! 💜 Ваш майстер {майстер} зафіксувала бездоганний результат ({послуга}). Фото результату додано до вашої картки! Нагадуємо наносити олійку на кутикулу щодня. Чекаємо на оновлення {дата_оновлення} о 11:30 ✨»`,
-        quality_24h: `💬 «{ім'я}, доброго дня! Це @Aura Nail Studio_ 💅 Як почуваються ваші нігтики після процедури? Чи все комфортно з покриттям? Оцініть якість роботи майстра {майстер} від 1 до 5 зірочок! ⭐»`,
+        post_visit: `💬 «{ім'я}, дякуємо за візит у @aura.nail.pedi.kiev! 💜 Ваш майстер {майстер} зафіксувала бездоганний результат ({послуга}). Фото результату додано до вашої картки! Нагадуємо наносити олійку на кутикулу щодня. Чекаємо на оновлення {дата_оновлення} о 11:30 ✨»`,
+        quality_24h: `💬 «{ім'я}, доброго дня! Це @aura.nail.pedi.kiev 💅 Як почуваються ваші нігтики після процедури? Чи все комфортно з покриттям? Оцініть якість роботи майстра {майстер} від 1 до 5 зірочок! ⭐»`,
         care_14d: `💬 «{ім'я}, минуло 2 тижні з візиту на манікюр! 💅 Покриття зараз на піку стійкості. Не забувайте зволожувати руки та кутикулу. Якщо бажаєте заздалегідь зафіксувати зручний час на оновлення — тисніть кнопку нижче! 🌸»`,
         retention_renewal: `💬 «{ім'я}, наближається оптимальний фізіологічний термін оновлення манікюру (3-4 тижні)! ⏰ Щоб нігтьова пластина не перевантажувалася відрослим покриттям, пропонуємо затишні віконця на {дата_оновлення} до майстра {майстер}. Запис в 1 клік: 👇»`,
-        special_promo: `💬 «{ім'я}, спеціально для вас як постійної гості @Aura Nail Studio_ діє привілей: -15% на комплекс "Манікюр + Педикюр" або Spa-догляд для рук при записі до кінця місяця! 🎁»`,
+        special_promo: `💬 «{ім'я}, спеціально для вас як постійної гості @aura.nail.pedi.kiev діє привілей: -15% на комплекс "Манікюр + Педикюр" або Spa-догляд для рук при записі до кінця місяця! 🎁»`,
         sos_warning: `💬 «{ім'я}, важлива пам'ятка від майстра {майстер}: якщо раптом трапиться скол або зачіпка нігтя — будь ласка, не здирайте покриття самостійно! Напишіть нам, і ми швидко та безкоштовно відремонтуємо нігтик 🩹»`
       },
       'Педикюр': {
-        post_visit: `💬 «{ім'я}, дякуємо за візит на Smart-педикюр у @Aura Nail Studio_! 🦶 Ваші ніжки ідеально гладенькі та доглянуті. Майстер {майстер} рекомендує щовечора наносити крем з сечовиною для пролонгації ефекту шовкових п'ят ✨»`,
+        post_visit: `💬 «{ім'я}, дякуємо за візит на Smart-педикюр у @aura.nail.pedi.kiev! 🦶 Ваші ніжки ідеально гладенькі та доглянуті. Майстер {майстер} рекомендує щовечора наносити крем з сечовиною для пролонгації ефекту шовкових п'ят ✨»`,
         quality_24h: `💬 «{ім'я}, добрий день! Як ваші відчуття після вчорашнього Smart-педикюру? Чи відчуваєте легкість у кожному кроці? Будемо вдячні за оцінку роботи майстра {майстер}! 💜»`,
         care_14d: `💬 «{ім'я}, минуло 2 тижні після педикюру! 🦶 Нагадуємо наносити зволожуючий крем або молекулярну олійку на ніч — це збереже гладкість стоп ще довше 🌿»`,
         retention_renewal: `💬 «{ім'я}, час для планового гігієнічного педикюру (4-5 тижнів)! ⏰ Підтримуйте легкість та здоров'я стоп. Забронюйте улюблене віконце на {дата_оновлення} до майстра {майстер} в 1 клік 👇»`,
@@ -4153,7 +4024,7 @@
           btnContainer.innerHTML = `
             <div class="tg-btn" onclick="sendTgActionDemo('rate')">⭐️⭐️⭐️⭐️⭐️ Оцінити якість візиту</div>
             <div class="tg-btn" onclick="sendTgActionDemo('book')">📅 Записатися на наступний візит в 1 клік</div>
-            <div class="tg-btn" onclick="sendTgActionDemo('route')">📍 Французький бульвар, 26/1 (Маршрут)</div>
+            <div class="tg-btn" onclick="sendTgActionDemo('route')">📍 вул. Велика Васильківська, 28 (Маршрут)</div>
           `;
         }
       }
@@ -4233,7 +4104,7 @@
         switchMode('client');
         alert(`📅 Відкрито форму запису на наступний візит! Оберіть бажаний день та час.`);
       } else if (action === 'route') {
-        alert(`📍 Адреса студії: м. Київ, Французький бульвар, 26/1.\nВхід через фасадний хол, 1 поверх. Затишна зона паркування!`);
+        alert(`📍 Адреса студії: м. Київ, вул. Велика Васильківська, 28.\nВхід через фасадний хол, 1 поверх. Затишна зона паркування!`);
       } else {
         alert(`💬 Запит на зворотний зв'язок надіслано адміністратору студії!`);
       }
@@ -4270,9 +4141,9 @@
         const dirVal = apt.dir || 'Манікюр';
 
         const titleElem = document.getElementById('briefModalTitle');
-        if (titleElem) titleElem.innerText = `📋 Бриф після візиту: ${clientName}`;
+        if (titleElem) titleElem.innerText = `Бриф після візиту: ${clientName}`;
         const subTitleElem = document.getElementById('briefModalSubtitle');
-        if (subTitleElem) subTitleElem.innerText = `Студія Aura Nail & Pedi Studio • ${serviceName} • Французький б-р, 26/1`;
+        if (subTitleElem) subTitleElem.innerText = `Студія Aura Nail & Pedi Studio • ${serviceName} • вул. Велика Васильківська, 28`;
 
         const dirBadge = document.getElementById('briefDirBadge');
         if (dirBadge) {
@@ -4313,11 +4184,11 @@
           if (lblAfter) lblAfter.innerText = 'Повний апаратний педикюр Smart + покриття';
           if (tgPhoto) tgPhoto.src = './assets/img/salon_5.jpg';
         } else {
-          if (imgBefore) imgBefore.src = './assets/img/industry_4.png';
-          if (lblBefore) lblBefore.innerText = 'Сухе волосся, пористі кінчики';
-          if (imgAfter) imgAfter.src = './assets/img/salon_2.jpg';
-          if (lblAfter) lblAfter.innerText = 'Spa-догляд «Абсолютне щастя» • Дзеркальний блиск';
-          if (tgPhoto) tgPhoto.src = './assets/img/salon_2.jpg';
+          if (imgBefore) imgBefore.src = './assets/img/salon_4.jpg';
+          if (lblBefore) lblBefore.innerText = 'Відросле покриття та суха шкіра стоп (до комплексу)';
+          if (imgAfter) imgAfter.src = './assets/img/salon_3.jpg';
+          if (lblAfter) lblAfter.innerText = 'Комплекс в 4 руки: манікюр + Smart-педикюр';
+          if (tgPhoto) tgPhoto.src = './assets/img/salon_3.jpg';
         }
 
         // Render direction-specific diagnostic fields
@@ -4331,7 +4202,7 @@
           
           
           
-          else drinkInput.value = 'Чай ерл грей з бергамотом';
+          else drinkInput.value = 'Матча на мигдалевому молоці або лате';
         }
 
         const healthInput = document.getElementById('briefHealthInput');
@@ -4341,7 +4212,7 @@
           
           
           
-          else healthInput.value = 'Освітлений блонд, висока пористість, термозахист обов\'язковий';
+          else healthInput.value = 'Чутлива кутикула, безкислотний праймер, зручне крісло-реклайнер';
         }
 
         // Initialize Editable BOM array
@@ -4503,58 +4374,15 @@
         renderAdminAppointments();
         closeBriefModal();
         alert(`✨ Бриф збережено!
-Матеріали списано зі складу studio Aura Nail & Pedi Studio.
+Матеріали списано зі складу студії Aura Nail & Pedi.
 Собівартість візиту: ${apt.cost} ₴, статус змінено на "Виконано".`);
       }
     };
 
-    // Inventory View
-    function renderAdminInventory() {
-      const tbody = document.getElementById('adminInventoryBody');
-      tbody.innerHTML = '';
-      const filter = document.getElementById('invCatFilter').value;
-
-      const items = (filter === 'all') 
-        ? appState.inventory 
-        : appState.inventory.filter(i => i.cat === filter);
-
-      items.forEach(inv => {
-        const tr = document.createElement('tr');
-        const badge = inv.status === 'В нормі' ? 'badge-success' : 'badge-warning';
-        tr.innerHTML = `
-          <td><strong>${inv.name}</strong></td>
-          <td><span class="dir-tag">${inv.cat}</span></td>
-          <td><strong>${inv.current}</strong> / ${inv.max} ${inv.unit}</td>
-          <td>${inv.cost} ₴</td>
-          <td><span class="badge ${badge}">${inv.status}</span></td>
-          <td style="text-align: right;">
-            <button class="btn btn-secondary btn-sm" onclick="restockItem('${inv.id}')">+ Поповнити</button>
-          </td>
-        `;
-        tbody.appendChild(tr);
-      });
-    }
-
-    document.getElementById('invCatFilter').addEventListener('change', renderAdminInventory);
-
-    window.restockItem = function(id) {
-      const item = appState.inventory.find(i => i.id === id);
-      if (item) {
-        item.current = item.max;
-        item.status = 'В нормі';
-        saveState();
-        renderAdminInventory();
-        alert(`Склад поповнено: ${item.name} тепер ${item.max} ${item.unit}`);
-      }
-    };
-
-    // Canonical clients database with master associations
-    
-
     const MASTER_CATS_MAP = {
       'm-daria': ['Манікюр'],
       'm-alina': ['Педикюр'],
-      'm-valeria': ['Манікюр', 'Педикюр', 'Комплекс']
+      'm-valeria': ['Манікюр', 'Педикюр', 'Комплекс', 'Комплекси в 4 руки']
     };
 
     function renderAdminClients() {
@@ -4568,18 +4396,25 @@
 
       let list = CANONICAL_CLIENTS;
       if (activeMaster) {
-        list = list.filter(c => c.masterId === activeMaster.id || c.masterName.toLowerCase() === activeMaster.name.toLowerCase());
+        list = list.filter(c => {
+          const cMaster = (c.master || c.masterName || '').toLowerCase();
+          return c.masterId === activeMaster.id || cMaster.includes(activeMaster.name.toLowerCase());
+        });
       }
       if (search) {
-        list = list.filter(c => c.name.toLowerCase().includes(search) || c.phone.includes(search) || c.notes.toLowerCase().includes(search));
+        list = list.filter(c =>
+          (c.name || '').toLowerCase().includes(search) ||
+          (c.phone || '').includes(search) ||
+          (c.notes || '').toLowerCase().includes(search)
+        );
       }
 
       const titleEl = document.getElementById('adminClientsTableTitle');
       if (titleEl) {
         if (activeMaster) {
-          titleEl.innerHTML = `Клієнтська база: <span style="color: var(--accent);">${activeMaster.name}</span> (${activeMaster.role}) • Клієнтів: ${list.length}`;
+          titleEl.innerHTML = `Клієнтська база: <span style="color: var(--accent-ink);">${activeMaster.name}</span> (${activeMaster.role}) • Клієнтів: ${list.length}`;
         } else {
-          titleEl.innerHTML = `Клієнтська база studio Aura Nail & Pedi Studio (Всі клієнти: ${list.length})`;
+          titleEl.innerHTML = `Клієнтська база студії Aura Nail & Pedi (Всі клієнти: ${list.length})`;
         }
       }
 
@@ -4587,8 +4422,7 @@
         tbody.innerHTML = `
           <tr>
             <td colspan="8" style="text-align: center; padding: 36px 16px; color: var(--text-muted);">
-              <div style="font-size: 28px; margin-bottom: 8px;">👥</div>
-              <div style="font-size: 14px; font-weight: 600; color: #fff;">У майстра ${activeMaster ? activeMaster.name : 'студії'} немає клієнтів за цим фільтром</div>
+              <div style="font-size: 14px; font-weight: 600; color: var(--text-primary);">У майстра ${activeMaster ? activeMaster.name : 'студії'} немає клієнтів за цим фільтром</div>
             </td>
           </tr>
         `;
@@ -4596,17 +4430,21 @@
       }
 
       list.forEach(c => {
+        const masterLabel = c.master || c.masterName || "Дар'я";
+        const spendVal = Number(c.totalSpend ?? c.ltv ?? 0);
+        const lastVisitLabel = c.lastVisit || c.last || '24.11.2026';
+        const dirLabel = c.cat || c.dir || 'Манікюр';
         const tr = document.createElement('tr');
         tr.innerHTML = `
           <td><strong>${c.name}</strong></td>
-          <td>${c.phone}</td>
-          <td><span class="badge" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">${c.masterName}</span></td>
-          <td><strong>${c.visits}</strong> візитів</td>
-          <td><strong style="color: #4ade80;">${c.ltv.toLocaleString()} ₴</strong></td>
-          <td>${c.last}</td>
-          <td><span style="font-size: 12px; color: var(--text-secondary);">${c.notes}</span></td>
+          <td style="font-variant-numeric: tabular-nums;">${c.phone}</td>
+          <td><span class="badge" style="background: var(--accent-subtle); color: var(--accent-ink);">${masterLabel}</span></td>
+          <td style="font-variant-numeric: tabular-nums;"><strong>${c.visits}</strong> візитів</td>
+          <td style="font-variant-numeric: tabular-nums;"><strong style="color: var(--success-ink);">${spendVal.toLocaleString()} ₴</strong></td>
+          <td style="font-variant-numeric: tabular-nums;">${lastVisitLabel}</td>
+          <td><span style="font-size: 12px; color: var(--text-secondary);">${c.notes || ''}</span></td>
           <td style="text-align: right; white-space: nowrap;">
-            <button class="btn btn-secondary btn-sm" onclick="alert('Електронна картка клієнтки: ${c.name}\nЗакріплений майстер: ${c.masterName}\nПослуга: ${c.dir}\nІсторія брифів: збережено в базі.')">📋 Картка</button>
+            <button class="btn btn-secondary btn-sm" onclick="alert('Електронна картка клієнтки: ${c.name}\nЗакріплений майстер: ${masterLabel}\nНапрямок: ${dirLabel}\nСума візитів: ${spendVal.toLocaleString()} ₴')">Картка</button>
           </td>
         `;
         tbody.appendChild(tr);
@@ -4645,7 +4483,7 @@
           const allowed = (MASTER_CATS_MAP[activeMaster.id] || []).join(', ');
           titleEl.innerHTML = `Склад матеріалів: <span style="color: var(--accent);">${activeMaster.name}</span> (${activeMaster.role}) • Напрямки: ${allowed} (${items.length} поз.)`;
         } else {
-          titleEl.innerHTML = `Склад матеріалів студії (BOM Списання) • Всі напрямки (${items.length} поз.)`;
+          titleEl.innerHTML = `Склад матеріалів студії (Автосписання матеріалів) • Всі напрямки (${items.length} поз.)`;
         }
       }
 
@@ -4769,7 +4607,7 @@
                     <span>${amt.toLocaleString()} ₴ (${pct}%)</span>
                   </div>
                   <div style="width: 100%; height: 8px; background: rgba(255, 255, 255, 0.08); border-radius: 4px; overflow: hidden;">
-                    <div style="width: ${pct}%; height: 100%; background: linear-gradient(90deg, #9356d4, #c084fc); border-radius: 4px;"></div>
+                    <div style="width: ${pct}%; height: 100%; background: var(--accent); border-radius: 4px;"></div>
                   </div>
                 </div>
               `;
@@ -4815,10 +4653,7 @@
           const catsWithBase = {
             'Манікюр': 24500 + (catTotals['Манікюр'] || 0),
             'Педикюр': 14200 + (catTotals['Педикюр'] || 0),
-            
-            
-            
-            'Педикюр': 8900 + (catTotals['Педикюр'] || 0)
+            'Комплекси в 4 руки': 8900 + (catTotals['Комплекси в 4 руки'] || 0)
           };
 
           Object.entries(catsWithBase).forEach(([cat, val]) => {
@@ -4830,7 +4665,7 @@
                   <span>${val.toLocaleString()} ₴ (${pct}%)</span>
                 </div>
                 <div style="width: 100%; height: 8px; background: rgba(255, 255, 255, 0.08); border-radius: 4px; overflow: hidden;">
-                  <div style="width: ${pct}%; height: 100%; background: linear-gradient(90deg, #9356d4, #c084fc); border-radius: 4px;"></div>
+                  <div style="width: ${pct}%; height: 100%; background: var(--accent); border-radius: 4px;"></div>
                 </div>
               </div>
             `;
@@ -5134,14 +4969,14 @@
       switchMode('admin');
     } else if (window.location.hash === '#brief') {
       switchMode('admin');
-      setTimeout(() => openSampleBriefModal('apt-01'), 150);
+      setTimeout(() => openSampleBriefModal('apt-1'), 150);
     }
     window.addEventListener('hashchange', () => {
       if (window.location.hash === '#admin') {
         switchMode('admin');
       } else if (window.location.hash === '#brief') {
         switchMode('admin');
-        setTimeout(() => openSampleBriefModal('apt-01'), 150);
+        setTimeout(() => openSampleBriefModal('apt-1'), 150);
       } else if (window.location.hash === '#booking' || window.location.hash === '#client') {
         switchMode('client');
       }
@@ -5444,10 +5279,10 @@
     window.saveTechCardEditorChanges = saveTechCardEditorChanges;
 
     function resetTechCardEditorToDefaults() {
-      if (!confirm('Відновити всі технологічні карти до заводських стандартів JuNailCRM? Усі користувацькі прив\'язки буде скинуто.')) return;
+      if (!confirm('Відновити всі технологічні карти до стандартних налаштувань студії? Усі власні зміни буде скинуто.')) return;
       appState.techCards = JSON.parse(JSON.stringify(DEFAULT_TECH_CARDS));
       localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
-      alert('🔄 Заводські стандарти JuNailCRM відновлено!');
+      alert('Стандартні норми студії відновлено.');
       renderTechCardEditorContent('techCardEditorSectionsContainer');
       renderTechCardEditorContent('adminTabTechcardsSectionsContainer');
 
