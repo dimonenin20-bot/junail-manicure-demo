@@ -2,6 +2,9 @@
 <html lang="uk" class="dark">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aura Nail & Pedi Studio ▷ Онлайн-запис & Nail CRM | Київ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -255,6 +258,76 @@
 
     .custom-select-option.selected .opt-check {
       opacity: 1;
+    }
+
+        /* Stories Interactive Choice Controls (Zero dropdown hassle) */
+    .stories-choice-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1.5px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+    .stories-choice-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(168, 85, 247, 0.4);
+      transform: translateY(-1px);
+    }
+    .stories-choice-card.active {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.18));
+      border-color: #c084fc;
+      box-shadow: 0 4px 14px rgba(168, 85, 247, 0.35);
+    }
+
+    .stories-choice-pill {
+      padding: 7px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      color: #cbd5e1;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      user-select: none;
+    }
+    .stories-choice-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(168, 85, 247, 0.4);
+      color: #fff;
+    }
+    .stories-choice-pill.active {
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(168, 85, 247, 0.4);
+    }
+
+    .stories-time-btn {
+      padding: 4px 10px;
+      font-size: 11.5px;
+      font-weight: 700;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #94a3b8;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .stories-time-btn:hover {
+      border-color: #c084fc;
+      color: #fff;
+    }
+    .stories-time-btn.active {
+      background: rgba(46, 196, 124, 0.2);
+      border-color: #4ade80;
+      color: #4ade80;
+      font-weight: 800;
     }
 
     /* Custom Range Sliders (Повзунки) */
@@ -2280,134 +2353,129 @@
 
       <!-- Admin Tab: Stories Generator -->
       <section id="adminTabStories" class="admin-subtab" style="display: none;">
-        <div style="display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start;">
-          <div class="canvas-box">
-            <canvas id="adminStoriesCanvas" width="1080" height="1920" style="width: 100%; height: 100%; object-fit: contain;"></canvas>
-          </div>
-          <div class="data-card" style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
-            <h3 style="font-size: 16px; color: #fff; margin: 0;">📱 Генератор Stories «Вільні віконця»</h3>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.4; margin: 0;">
-              Створюйте готові Stories 1080x1920 для Instagram @aura.nail.pedi.kiev. Назва студії, майстер, дата та час формуються автоматично!
-            </p>
-
-            <div class="form-row">
-              <label class="form-lbl">1. Оберіть майстра</label>
-              <input type="hidden" id="storiesMasterSelect" value="all">
-              <div class="custom-select-wrap" id="customStoriesMasterWrap">
-                <div class="custom-select-trigger" onclick="toggleCustomDropdown('customStoriesMasterWrap')">
-                  <div class="trigger-content" id="storiesMasterTriggerText">👑 Всі майстри студії Aura</div>
-                  <div class="trigger-arrow">▼</div>
-                </div>
-                <div class="custom-select-menu">
-                  <div class="custom-select-option selected" data-value="all" onclick="selectCustomOption('storiesMasterSelect', 'customStoriesMasterWrap', 'all', '👑 Всі майстри студії Aura')">
-                    <div class="opt-left"><span>👑</span> <span>Всі майстри студії Aura</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="m-daria" onclick="selectCustomOption('storiesMasterSelect', 'customStoriesMasterWrap', 'm-daria', '💅 Дар\'я (ТОП-Майстер Манікюру)')">
-                    <div class="opt-left"><span>💅</span> <span>Дар'я (ТОП-Майстер Манікюру)</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="m-alina" onclick="selectCustomOption('storiesMasterSelect', 'customStoriesMasterWrap', 'm-alina', '🦶 Аліна (ТОП-Майстер Smart-Педикюру)')">
-                    <div class="opt-left"><span>🦶</span> <span>Аліна (ТОП-Майстер Smart-Педикюру)</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="m-valeria" onclick="selectCustomOption('storiesMasterSelect', 'customStoriesMasterWrap', 'm-valeria', '✨ Валерія (Майстер Манікюру & 4 руки)')">
-                    <div class="opt-left"><span>✨</span> <span>Валерія (Майстер Манікюру & 4 руки)</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                </div>
-              </div>
+        <div style="display: grid; grid-template-columns: 340px 1fr; gap: 28px; align-items: start;">
+          <!-- Canvas Preview Column -->
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="canvas-box" style="position: relative; background: #000; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 36px rgba(0,0,0,0.6); border: 1.5px solid rgba(168, 85, 247, 0.3);">
+              <canvas id="adminStoriesCanvas" width="1080" height="1920" style="width: 100%; height: 100%; object-fit: contain; display: block;"></canvas>
             </div>
-
-            <div class="form-row">
-              <label class="form-lbl">2. Напрямок послуги</label>
-              <input type="hidden" id="storiesDirSelect" value="Манікюр">
-              <div class="custom-select-wrap" id="customStoriesDirWrap">
-                <div class="custom-select-trigger" onclick="toggleCustomDropdown('customStoriesDirWrap')">
-                  <div class="trigger-content" id="storiesDirTriggerText">💅 Манікюр</div>
-                  <div class="trigger-arrow">▼</div>
-                </div>
-                <div class="custom-select-menu">
-                  <div class="custom-select-option selected" data-value="Манікюр" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Манікюр', '💅 Манікюр')">
-                    <div class="opt-left"><span>💅</span> <span>Манікюр</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="Smart-Педикюр" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Smart-Педикюр', '🦶 Smart-Педикюр')">
-                    <div class="opt-left"><span>🦶</span> <span>Smart-Педикюр</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="Комплекс у 4 руки" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Комплекс у 4 руки', '⚡ Комплекс у 4 руки')">
-                    <div class="opt-left"><span>⚡</span> <span>Комплекс у 4 руки</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="Манікюр & Педикюр" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Манікюр & Педикюр', '💅🦶 Манікюр & Педикюр')">
-                    <div class="opt-left"><span>💅🦶</span> <span>Манікюр & Педикюр</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="Укріплення & Нарощування" onclick="selectCustomOption('storiesDirSelect', 'customStoriesDirWrap', 'Укріплення & Нарощування', '💎 Укріплення & Нарощування')">
-                    <div class="opt-left"><span>💎</span> <span>Укріплення & Нарощування</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <label class="form-lbl">3. Дата віконець</label>
-              <input type="hidden" id="storiesDateSelect" value="Завтра • 25 листопада">
-              <div class="custom-select-wrap" id="customStoriesDateWrap">
-                <div class="custom-select-trigger" onclick="toggleCustomDropdown('customStoriesDateWrap')">
-                  <div class="trigger-content" id="storiesDateTriggerText">📅 Завтра • 25 листопада</div>
-                  <div class="trigger-arrow">▼</div>
-                </div>
-                <div class="custom-select-menu">
-                  <div class="custom-select-option" data-value="Сьогодні • 24 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'Сьогодні • 24 листопада', '📅 Сьогодні • 24 листопада')">
-                    <div class="opt-left"><span>📅</span> <span>Сьогодні • 24 листопада</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option selected" data-value="Завтра • 25 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'Завтра • 25 листопада', '📅 Завтра • 25 листопада')">
-                    <div class="opt-left"><span>📅</span> <span>Завтра • 25 листопада</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="Четвер • 26 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'Четвер • 26 листопада', '📅 Четвер • 26 листопада')">
-                    <div class="opt-left"><span>📅</span> <span>Четвер • 26 листопада</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="П'ятниця • 27 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'П\'ятниця • 27 листопада', '📅 П\'ятниця • 27 листопада')">
-                    <div class="opt-left"><span>📅</span> <span>П'ятниця • 27 листопада</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                  <div class="custom-select-option" data-value="Субота • 28 листопада" onclick="selectCustomOption('storiesDateSelect', 'customStoriesDateWrap', 'Субота • 28 листопада', '📅 Субота • 28 листопада')">
-                    <div class="opt-left"><span>📅</span> <span>Субота • 28 листопада</span></div>
-                    <span class="opt-check">✓</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-                <label class="form-lbl" style="margin: 0;">4. Вільні години (через кому або пробіл)</label>
-              </div>
-              <input type="text" class="input-field" id="storiesHoursInput" value="10:00, 12:30, 15:00, 17:30, 19:00" oninput="drawAdminStories()">
-              
-              <!-- Quick Time Chips -->
-              <div style="font-size: 11px; color: var(--text-muted); margin-top: 8px; margin-bottom: 4px;">Швидке додавання/видалення віконець:</div>
-              <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="storiesQuickTimeChips">
-                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('09:30')">+ 09:30</button>
-                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('11:00')">+ 11:00</button>
-                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('12:30')">+ 12:30</button>
-                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('14:00')">+ 14:00</button>
-                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('15:30')">+ 15:30</button>
-                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('17:00')">+ 17:00</button>
-                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('18:30')">+ 18:30</button>
-                <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStoriesHour('20:00')">+ 20:00</button>
-              </div>
-            </div>
-
-            <button class="btn btn-primary" id="btnDownloadStory" style="align-self: flex-start; margin-top: 6px;">
+            <button class="btn btn-primary" id="btnDownloadStory" style="width: 100%; padding: 14px; font-size: 14.5px; font-weight: 700; box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);">
               📥 Завантажити Stories (PNG 1080x1920)
             </button>
+          </div>
+
+          <!-- Controls Column -->
+          <div class="data-card" style="padding: 24px; display: flex; flex-direction: column; gap: 20px; background: rgba(22, 27, 34, 0.9); border: 1px solid rgba(168, 85, 247, 0.25); border-radius: 18px;">
+            <div>
+              <h3 style="font-size: 17px; color: #fff; margin: 0; display: flex; align-items: center; gap: 8px;">
+                <span>📱 Генератор Stories «Вільні віконця»</span>
+                <span class="badge" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); font-size: 11px;">Instagram Ready</span>
+              </h3>
+              <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.4; margin: 6px 0 0 0;">
+                Створюйте готові брендовані Stories для <strong>@aura.nail.pedi.kiev</strong>. Натискайте на майстра, напрямок та віконця — результат на Canvas оновлюється миттєво!
+              </p>
+            </div>
+
+            <!-- Hidden inputs holding current values for compatibility -->
+            <input type="hidden" id="storiesMasterSelect" value="all">
+            <input type="hidden" id="storiesDirSelect" value="Манікюр">
+            <input type="hidden" id="storiesDateSelect" value="Завтра • 25 листопада">
+
+            <!-- 1. Master Selector (Interactive Cards) -->
+            <div>
+              <label class="form-lbl" style="font-size: 12.5px; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; display: block;">
+                1. Оберіть майстра:
+              </label>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;" id="storiesMasterCardsContainer">
+                <div class="stories-choice-card active" data-master="all" onclick="setStoriesMaster('all', this)">
+                  <img src="./assets/img/logo.png" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;">
+                  <div style="text-align: left;">
+                    <div style="font-size: 12.5px; font-weight: 700; color: #fff;">👑 Всі майстри</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Власниця студії</div>
+                  </div>
+                </div>
+                <div class="stories-choice-card" data-master="m-daria" onclick="setStoriesMaster('m-daria', this)">
+                  <img src="./assets/img/masters/master_daria.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;">
+                  <div style="text-align: left;">
+                    <div style="font-size: 12.5px; font-weight: 700; color: #fff;">💅 Дар'я</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">ТОП-Манікюр</div>
+                  </div>
+                </div>
+                <div class="stories-choice-card" data-master="m-alina" onclick="setStoriesMaster('m-alina', this)">
+                  <img src="./assets/img/masters/master_alina.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;">
+                  <div style="text-align: left;">
+                    <div style="font-size: 12.5px; font-weight: 700; color: #fff;">🦶 Аліна</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Smart-Педикюр</div>
+                  </div>
+                </div>
+                <div class="stories-choice-card" data-master="m-valeria" onclick="setStoriesMaster('m-valeria', this)">
+                  <img src="./assets/img/masters/master_valeria.jpg" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;">
+                  <div style="text-align: left;">
+                    <div style="font-size: 12.5px; font-weight: 700; color: #fff;">✨ Валерія</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Манікюр & 4 руки</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Direction Selector (Interactive Pills) -->
+            <div>
+              <label class="form-lbl" style="font-size: 12.5px; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; display: block;">
+                2. Напрямок послуги:
+              </label>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="storiesDirPillsContainer">
+                <button type="button" class="stories-choice-pill active" onclick="setStoriesDir('Манікюр', this)">💅 Манікюр</button>
+                <button type="button" class="stories-choice-pill" onclick="setStoriesDir('Smart-Педикюр', this)">🦶 Smart-Педикюр</button>
+                <button type="button" class="stories-choice-pill" onclick="setStoriesDir('Комплекс у 4 руки', this)">⚡ Комплекс у 4 руки</button>
+                <button type="button" class="stories-choice-pill" onclick="setStoriesDir('Манікюр & Педикюр', this)">💅🦶 Манікюр & Педикюр</button>
+                <button type="button" class="stories-choice-pill" onclick="setStoriesDir('Укріплення & Нарощування', this)">💎 Укріплення</button>
+              </div>
+            </div>
+
+            <!-- 3. Date Selector (Interactive Pills) -->
+            <div>
+              <label class="form-lbl" style="font-size: 12.5px; font-weight: 700; color: #e2e8f0; margin-bottom: 8px; display: block;">
+                3. Дата віконець:
+              </label>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="storiesDatePillsContainer">
+                <button type="button" class="stories-choice-pill" onclick="setStoriesDate('Сьогодні • 24 листопада', this)">📅 Сьогодні (24 лист)</button>
+                <button type="button" class="stories-choice-pill active" onclick="setStoriesDate('Завтра • 25 листопада', this)">📅 Завтра (25 лист)</button>
+                <button type="button" class="stories-choice-pill" onclick="setStoriesDate('Четвер • 26 листопада', this)">Чт, 26 лист</button>
+                <button type="button" class="stories-choice-pill" onclick="setStoriesDate('П\'ятниця • 27 листопада', this)">Пт, 27 лист</button>
+                <button type="button" class="stories-choice-pill" onclick="setStoriesDate('Субота • 28 листопада', this)">Сб, 28 лист</button>
+              </div>
+            </div>
+
+            <!-- 4. Quick Time Chips & Hours Input -->
+            <div style="background: rgba(13, 17, 23, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <label class="form-lbl" style="margin: 0; font-size: 12.5px; font-weight: 700; color: #fff;">
+                  4. Вільні години для запису:
+                </label>
+                <button type="button" class="btn btn-secondary btn-sm" style="font-size: 11px; padding: 2px 8px;" onclick="resetStoriesHours()">
+                  🔄 Скинути
+                </button>
+              </div>
+              
+              <!-- Quick Time Chips -->
+              <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px;" id="storiesQuickChipsRow">
+                <button type="button" class="stories-time-btn" onclick="toggleStoriesHour('09:30')">+ 09:30</button>
+                <button type="button" class="stories-time-btn active" onclick="toggleStoriesHour('10:00')">✓ 10:00</button>
+                <button type="button" class="stories-time-btn" onclick="toggleStoriesHour('11:00')">+ 11:00</button>
+                <button type="button" class="stories-time-btn active" onclick="toggleStoriesHour('12:30')">✓ 12:30</button>
+                <button type="button" class="stories-time-btn" onclick="toggleStoriesHour('14:00')">+ 14:00</button>
+                <button type="button" class="stories-time-btn active" onclick="toggleStoriesHour('15:00')">✓ 15:00</button>
+                <button type="button" class="stories-time-btn" onclick="toggleStoriesHour('16:00')">+ 16:00</button>
+                <button type="button" class="stories-time-btn active" onclick="toggleStoriesHour('17:30')">✓ 17:30</button>
+                <button type="button" class="stories-time-btn" onclick="toggleStoriesHour('18:30')">+ 18:30</button>
+                <button type="button" class="stories-time-btn active" onclick="toggleStoriesHour('19:00')">✓ 19:00</button>
+              </div>
+
+              <input type="text" class="input-field" id="storiesHoursInput" value="10:00, 12:30, 15:00, 17:30, 19:00" oninput="onStoriesHoursManualInput()" style="background: #090b0e; border-color: rgba(168, 85, 247, 0.4); font-size: 13.5px; font-weight: 600; color: #fff;">
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 5px;">
+                💡 Клікайте по кнопках годин вище або редагуйте вручну через кому. Зміни одразу відображаються на картинці!
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -4773,11 +4841,71 @@
     }
     window.renderAdminFinance = renderAdminFinance;
 
+    
+    function setStoriesMaster(masterId, el) {
+      const hidden = document.getElementById('storiesMasterSelect');
+      if (hidden) hidden.value = masterId;
+      document.querySelectorAll('.stories-choice-card').forEach(c => c.classList.remove('active'));
+      if (el) el.classList.add('active');
+      drawAdminStories();
+    }
+    window.setStoriesMaster = setStoriesMaster;
+
+    function setStoriesDir(dirVal, el) {
+      const hidden = document.getElementById('storiesDirSelect');
+      if (hidden) hidden.value = dirVal;
+      document.querySelectorAll('#storiesDirPillsContainer .stories-choice-pill').forEach(p => p.classList.remove('active'));
+      if (el) el.classList.add('active');
+      drawAdminStories();
+    }
+    window.setStoriesDir = setStoriesDir;
+
+    function setStoriesDate(dateVal, el) {
+      const hidden = document.getElementById('storiesDateSelect');
+      if (hidden) hidden.value = dateVal;
+      document.querySelectorAll('#storiesDatePillsContainer .stories-choice-pill').forEach(p => p.classList.remove('active'));
+      if (el) el.classList.add('active');
+      drawAdminStories();
+    }
+    window.setStoriesDate = setStoriesDate;
+
+    function resetStoriesHours() {
+      const inp = document.getElementById('storiesHoursInput');
+      if (inp) {
+        inp.value = '10:00, 12:30, 15:00, 17:30, 19:00';
+        updateStoriesChipsUI();
+        drawAdminStories();
+      }
+    }
+    window.resetStoriesHours = resetStoriesHours;
+
+    function onStoriesHoursManualInput() {
+      updateStoriesChipsUI();
+      drawAdminStories();
+    }
+    window.onStoriesHoursManualInput = onStoriesHoursManualInput;
+
+    function updateStoriesChipsUI() {
+      const inp = document.getElementById('storiesHoursInput');
+      if (!inp) return;
+      const list = (inp.value || '').split(/[,;•\s|/]+/).map(s => s.trim()).filter(Boolean);
+      document.querySelectorAll('.stories-time-btn').forEach(btn => {
+        const text = btn.innerText.replace(/^[+✓\s]+/, '').trim();
+        if (list.includes(text)) {
+          btn.classList.add('active');
+          btn.innerText = `✓ ${text}`;
+        } else {
+          btn.classList.remove('active');
+          btn.innerText = `+ ${text}`;
+        }
+      });
+    }
+    window.updateStoriesChipsUI = updateStoriesChipsUI;
+
     function toggleStoriesHour(h) {
       const inp = document.getElementById('storiesHoursInput');
       if (!inp) return;
       let raw = inp.value || '';
-      // Parse current list
       let list = raw.split(/[,;•\s|/]+/).map(s => s.trim()).filter(Boolean);
       const idx = list.indexOf(h);
       if (idx !== -1) {
@@ -4787,9 +4915,11 @@
         list.sort();
       }
       inp.value = list.join(', ');
+      updateStoriesChipsUI();
       drawAdminStories();
     }
     window.toggleStoriesHour = toggleStoriesHour;
+
 
     // Custom Dropdown Helper Functions
     function toggleCustomDropdown(wrapId) {
