@@ -2233,6 +2233,20 @@
       { id: "apt-5", clientName: "Тетяна Мороз", phone: "+380 99 777 88 99", cat: "Педикюр", serviceName: "Експрес-педикюр пальчиків з покриттям", time: "18:45", date: "today", master: "Аліна", price: 850, status: "pending", reminderScheduled: false, reminderDirectSent: false, prepayMethod: "cash" }
     ];
 
+    const CANONICAL_CLIENTS = [
+      { id: "cli-1", name: "Олена Ковальчук", phone: "+380 97 123 45 67", visits: 12, totalSpend: 10200, lastVisit: "24.11.2026", cat: "Манікюр", master: "Дар\'я", notes: "Минулого разу: Чіткий квадрат, довжина 2, Cold Clear Gel. Схильність до відшарувань на вказівних (використовувати Fiber Base). Покриття носить 4 тижні.", lastBrief: {
+        coating: "mc_ideal", shape: "ms_sharp_sq", length: "ml_2", plate: ["mp_thin"], base: "mb_cold_gel", top: "mt_gloss", cost: 58
+      }},
+      { id: "cli-2", name: "Ірина Мельник", phone: "+380 93 987 65 43", visits: 8, totalSpend: 8400, lastVisit: "24.11.2026", cat: "Педикюр", master: "Аліна", notes: "Минулого разу: Smart-педикюр 180/240 гріт, форма овал, тонке покриття без потовщення. Молекулярна олійка.", lastBrief: {
+        skin: "ps_normal", nails: ["pn_normal"], coating: "pc_thin_gel", smartDisk: "pd_standard", cost: 68
+      }},
+      { id: "cli-3", name: "Аліна Сидоренко", phone: "+380 50 555 12 34", visits: 5, totalSpend: 6250, lastVisit: "24.11.2026", cat: "Манікюр", master: "Дар\'я", notes: "Минулого разу: М'який квадрат, довжина 1, Fiber Base. Полюбляє молочний градієнт або нюд.", lastBrief: {
+        coating: "mc_edges", shape: "ms_soft_sq", length: "ml_1", plate: ["mp_thin"], base: "mb_fiber", top: "mt_matte", cost: 84
+      }},
+      { id: "cli-4", name: "Вікторія Шевченко", phone: "+380 67 222 33 44", visits: 4, totalSpend: 2800, lastVisit: "24.11.2026", cat: "Комплекс", master: "Валерія", notes: "Полюбляє комплекси Duo в 4 руки. Одночасно манікюр + педикюр за 1.5 години.", lastBrief: null },
+      { id: "cli-5", name: "Тетяна Мороз", phone: "+380 99 777 88 99", visits: 1, totalSpend: 1050, lastVisit: "24.11.2026", cat: "Педикюр", master: "Аліна", notes: "Первинний візит. Експрес-педикюр з вирівнюванням.", lastBrief: null }
+    ];
+
     // Standard BOM Fallback Map
     const DEFAULT_BOM_MAP = {
       'Манікюр': [
@@ -3724,19 +3738,7 @@
     };
 
     // Canonical clients database with master associations
-    const CANONICAL_CLIENTS = [
-      { id: "cli-1", name: "Олена Ковальчук", phone: "+380 97 123 45 67", visits: 12, totalSpend: 10200, lastVisit: "24.11.2026", cat: "Манікюр", master: "Дар\'я", notes: "Минулого разу: Чіткий квадрат, довжина 2, Cold Clear Gel. Схильність до відшарувань на вказівних (використовувати Fiber Base). Покриття носить 4 тижні.", lastBrief: {
-        coating: "mc_ideal", shape: "ms_sharp_sq", length: "ml_2", plate: ["mp_thin"], base: "mb_cold_gel", top: "mt_gloss", cost: 58
-      }},
-      { id: "cli-2", name: "Ірина Мельник", phone: "+380 93 987 65 43", visits: 8, totalSpend: 8400, lastVisit: "24.11.2026", cat: "Педикюр", master: "Аліна", notes: "Минулого разу: Smart-педикюр 180/240 гріт, форма овал, тонке покриття без потовщення. Молекулярна олійка.", lastBrief: {
-        skin: "ps_normal", nails: ["pn_normal"], coating: "pc_thin_gel", smartDisk: "pd_standard", cost: 68
-      }},
-      { id: "cli-3", name: "Аліна Сидоренко", phone: "+380 50 555 12 34", visits: 5, totalSpend: 6250, lastVisit: "24.11.2026", cat: "Манікюр", master: "Дар\'я", notes: "Минулого разу: М'який квадрат, довжина 1, Fiber Base. Полюбляє молочний градієнт або нюд.", lastBrief: {
-        coating: "mc_edges", shape: "ms_soft_sq", length: "ml_1", plate: ["mp_thin"], base: "mb_fiber", top: "mt_matte", cost: 84
-      }},
-      { id: "cli-4", name: "Вікторія Шевченко", phone: "+380 67 222 33 44", visits: 4, totalSpend: 2800, lastVisit: "24.11.2026", cat: "Комплекс", master: "Валерія", notes: "Полюбляє комплекси Duo в 4 руки. Одночасно манікюр + педикюр за 1.5 години.", lastBrief: null },
-      { id: "cli-5", name: "Тетяна Мороз", phone: "+380 99 777 88 99", visits: 1, totalSpend: 1050, lastVisit: "24.11.2026", cat: "Педикюр", master: "Аліна", notes: "Первинний візит. Експрес-педикюр з вирівнюванням.", lastBrief: null }
-    ];
+    
 
     const MASTER_CATS_MAP = {
       'm-daria': ['Манікюр'],
